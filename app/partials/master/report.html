@@ -1,0 +1,26 @@
+<div class="row-fluid">
+    <div class="span12">
+        <ng-include src="'partials/master/header.html'"></ng-include>
+
+        <div class="row-fluid">
+            <div class="span2">
+                <ng-include src="'partials/master/nav.html'" onload="bindEvent()"></ng-include>
+            </div>
+
+            <div class="span9" style="padding-left: 15px">
+                <div class="span11" style="height: 720px">
+                    <div class="pull-right" style="padding-bottom: 15px">
+                        <button class="btn btn-success" type="button">全屏 <i class="icon-resize-full"></i></button>
+                    </div>
+                    <div  id="report">
+                    </div>
+                </div>
+                <div class="span1">
+                    <legend>时间</legend>
+                    <label>年 <input type="radio" checked></label>
+                    <label>月 <input type="radio"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
