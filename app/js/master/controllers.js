@@ -7,6 +7,10 @@ angular.module('myApp.controllers', []).
 
         $scope.subpage = 'partials/branch/' + $scope.items[0] + '.html';
         $scope.depat =  $scope.deptmts[0];
+        $scope.report = {};
+        $scope.report.width;
+        $scope.report.height;
+        $scope.report.isFull = false;
 
         $scope.showReport = function(itemId, deptmtId)
         {
@@ -20,7 +24,31 @@ angular.module('myApp.controllers', []).
             });
         }
 
+        $scope.toggleFullScreen = function()
+        {
+            if ($scope.report.isFull)
+            {
+                $("#header").removeClass('hide');
+                $("#nav_div").removeClass('hide');
+                $("#report_div").removeClass('span12');
+                $("#report_div").addClass('span10');
+                drawReport();
+                $scope.report.isFull = false;
+            }
+            else
+            {
+                $("#header").addClass('hide');
+                $("#nav_div").addClass('hide');
+                $("#report_div").removeClass('span10');
+                $("#report_div").addClass('span12');
+                drawReport();
+                $scope.report.isFull = true;
+            }
+        }
+
         $scope.$on('$viewContentLoaded', function () {
+            $scope.report.width  = $('#report_div').width();
+            $scope.report.height = $('#report_div').height();
             drawReport();
         });
 
@@ -125,9 +153,10 @@ angular.module('myApp.controllers', []).
             // Apply the theme
             var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
 
-            var chart= $('#report').highcharts({
+            var chart = $('#report').highcharts({
                 chart: {
-                    zoomType: 'xy'
+                    zoomType: 'xy',
+                    height:$(window).height()*0.75
                 },
                 title: {
                     text: '税前净利润报表'
@@ -271,6 +300,8 @@ angular.module('myApp.controllers', []).
                     }
                 ]
             });
+
+            return chart;
         }
   }])
 
