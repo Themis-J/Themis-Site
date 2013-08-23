@@ -28,6 +28,8 @@ angular.module('myApp.controllers', []).
         {
             if ($scope.report.isFull)
             {
+                $('#container_div').addClass('container');
+                $('#container_div').removeClass('row-fluid');
                 $("#header").removeClass('hide');
                 $("#nav_div").removeClass('hide');
                 $("#report_div").removeClass('span12');
@@ -37,6 +39,8 @@ angular.module('myApp.controllers', []).
             }
             else
             {
+                $('#container_div').removeClass('container');
+                $('#container_div').addClass('row-fluid');
                 $("#header").addClass('hide');
                 $("#nav_div").addClass('hide');
                 $("#report_div").removeClass('span10');
@@ -156,7 +160,7 @@ angular.module('myApp.controllers', []).
             var chart = $('#report').highcharts({
                 chart: {
                     zoomType: 'xy',
-                    height:$(window).height()*0.75
+                    height:$(window).height()*0.60
                 },
                 title: {
                     text: '税前净利润报表'

@@ -1,28 +1,46 @@
-<div class="row-fluid">
-    <div class="span12">
-        <div id="header">
-        <ng-include src="'partials/master/header.html'"></ng-include>
+<div id="header">
+    <ng-include src="'partials/master/header.html'"></ng-include>
+</div>
+
+<div id='container_div' class="container" style="padding-top:90px">
+    <div class="row-fluid">
+    <div id="nav_div" class="span2">
+        <ng-include src="'partials/master/nav.html'" onload="bindEvent()"></ng-include>
+    </div>
+
+    <div id="report_div" class="span10 row-fluid" style="padding-left: 60px">
+        <div class="span11">
+            <div>
+            <div class="btn-group">
+                <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
+                    <span style="font-size: 14px">2013年</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <!-- dropdown menu links -->
+                </ul>
+            </div>
+            <div class="btn-group" style="font-size: 30px;padding-right: 5px">
+                <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
+                    <span style="font-size: 14px">8月</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <!-- dropdown menu links -->
+                </ul>
+            </div>
+
+                <button class="btn btn-success pull-right" type="button" ng-click="toggleFullScreen()">全屏</button>
+            </div>
+
+            <div id="report">
+            </div>
         </div>
-
-        <div class="row-fluid">
-            <div id="nav_div" class="span2">
-                <ng-include src="'partials/master/nav.html'" onload="bindEvent()"></ng-include>
-            </div>
-
-            <div id="report_div" class="span10 row-fluid" style="padding-left: 15px">
-                <div class="span11" >
-                    <div class="pull-right" style="padding-bottom: 15px">
-                        <button class="btn btn-success" type="button" ng-click="toggleFullScreen()">全屏 <i class="icon-resize-full"></i></button>
-                    </div>
-                    <div  id="report">
-                    </div>
-                </div>
-                <div class="span1">
-                    <legend>时间</legend>
-                    <label>年 <input type="radio" checked></label>
-                    <label>月 <input type="radio"></label>
-                </div>
-            </div>
+        <div class="span1">
+            <legend>时间</legend>
+            <label>年 <input type="radio" checked></label>
+            <label>月 <input type="radio"></label>
         </div>
     </div>
+</div>
 </div>
