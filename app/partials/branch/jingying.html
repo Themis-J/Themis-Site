@@ -1,24 +1,42 @@
 <legend>经营费用 <i class="icon-angle-right"></i> {{depat}}</legend>
 <div style="height: 30px">
-<span style="color:gray">   上次自动保存于20点23分12秒...</span>
+    <div class="btn-group">
+        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
+            <span style="font-size: 14px">2013年</span>
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- dropdown menu links -->
+        </ul>
+    </div>
+    <div class="btn-group" style="font-size: 30px;padding-right: 5px">
+        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
+            <span style="font-size: 14px">8月</span>
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- dropdown menu links -->
+        </ul>
+    </div>
+<span style="color:gray">   上次自动保存于20点23分12秒0</span>
 
 <div class="pull-right">
-    <button class="btn" type="button"> 标记为完成<i class="icon-hand-up"></i></button>
+    <button class="btn" type="button"  ng-click="toggleMark()"> 标记为完成<i class="icon-hand-up"></i></button>
 </div>
 </div>
 
 <div class="row-fluid">
-<div class="span4">
+<div class="span6">
     <div  style="margin-top:20px">
         <label><b>变动费用</b></label>
         <div class="well">
             <table>
                 <tr>
-                    <td width="70%">
+                    <td width="65%">
                         销售顾问薪酬
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="72,223" value="72,223">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="666">
                     </td>
                 </tr>
                 <tr>
@@ -26,7 +44,7 @@
                         金融保险顾问薪酬
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..."  value="4,223">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0"  value="888">
                     </td>
                 </tr>
                 <tr>
@@ -34,7 +52,7 @@
                         车辆交付费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="4,708" value="4,708">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="888">
                     </td>
                 </tr>
                 <tr>
@@ -42,7 +60,7 @@
                         顾客满意度费用 - 新车 二手车
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="2,432">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="111">
                     </td>
                 </tr>
                 <tr>
@@ -62,11 +80,11 @@
         <div class="well">
             <table>
                 <tr>
-                    <td width="70%">
+                    <td width="65%">
                         销售顾问以外各部门员工薪酬
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="72,223" value="72,223">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="666">
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +92,7 @@
                         广告费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="61,254">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="999">
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +100,7 @@
                         车辆短期融资信贷利息
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="4,708" value="4,708">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="888">
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +108,7 @@
                         库存维护清理费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="2,522">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="999">
                     </td>
                 </tr>
                 <tr>
@@ -98,7 +116,7 @@
                         公司用车费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="2,542">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="666">
                     </td>
                 </tr>
                 <tr>
@@ -106,7 +124,55 @@
                         员工差旅培训费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="3,5542">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="6666">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br><b>合计</b>
+                    </td>
+                    <td>
+                        <br><b>170,931</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div  style="margin-top:20px">
+        <label><b>固定费用</b></label>
+        <div class="well">
+            <table>
+                <tr>
+                    <td width="65%">
+                        土地租金或按揭月供利息
+                    </td>
+                    <td>
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="666">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        公司用车以外的固定资产保险
+                    </td>
+                    <td>
+                        <input type="text" class="input-small"   style="width: 60%" placeholder="0" value="999">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        水电费用
+                    </td>
+                    <td>
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="888">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        房屋建筑物维护
+                    </td>
+                    <td>
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="999">
                     </td>
                 </tr>
                 <tr>
@@ -122,17 +188,17 @@
     </div>
 </div>
 
-<div class="span4">
+<div class="span6">
     <div  style="margin-top:20px">
         <label><b>人工费用</b></label>
         <div class="well">
             <table>
                 <tr>
-                    <td width="70%">
+                    <td width="65%">
                         公司领导层薪酬
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="72,223" value="72,223">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="666">
                     </td>
                 </tr>
                 <tr>
@@ -140,7 +206,7 @@
                         部门经理薪酬
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="5,233">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="2266">
                     </td>
                 </tr>
                 <tr>
@@ -148,7 +214,7 @@
                         福利
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="4,708" value="4,708">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="888">
                     </td>
                 </tr>
                 <tr>
@@ -156,7 +222,7 @@
                         非正式员工费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="1,233">
+                        <input type="text" class="input-small"  style="width: 60%" placeholder="0" value="6688">
                     </td>
                 </tr>
                 <tr>
@@ -176,11 +242,11 @@
         <div class="well">
             <table>
                 <tr>
-                    <td width="70%">
+                    <td width="65%">
                         会员费,非品牌协会,出版商订购物
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="72,223" value="72,223">
+                        <input type="text" class="input-small"   style="width: 60%" placeholder="0" value="666">
                     </td>
                 </tr>
                 <tr>
@@ -188,7 +254,7 @@
                         办公用品
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="61,254">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="999">
                     </td>
                 </tr>
                 <tr>
@@ -196,7 +262,7 @@
                         外包服务费用
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="4,708" value="4,708">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="888">
                     </td>
                 </tr>
                 <tr>
@@ -204,7 +270,7 @@
                         邮资
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="2,522">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="999">
                     </td>
                 </tr>
                 <tr>
@@ -212,7 +278,7 @@
                         差旅费
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="2,542">
+                        <input type="text" class="input-small"  style="width: 60%"  placeholder="0" value="666">
                     </td>
                 </tr>
                 <tr>
@@ -220,57 +286,7 @@
                         审计与法律服务费
                     </td>
                     <td>
-                        <input type="text" class="input-small"  placeholder="..." value="3,5542">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <br><b>合计</b>
-                    </td>
-                    <td>
-                        <br><b>170,931</b>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="span4">
-    <div  style="margin-top:20px">
-        <label><b>固定费用</b></label>
-        <div class="well">
-            <table>
-                <tr>
-                    <td width="70%">
-                        土地租金或按揭月供利息
-                    </td>
-                    <td>
-                        <input type="text" class="input-small"  placeholder="72,223" value="72,223">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        公司用车以外的固定资产保险
-                    </td>
-                    <td>
-                        <input type="text" class="input-small"  placeholder="..." value="61,254">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        水电费用
-                    </td>
-                    <td>
-                        <input type="text" class="input-small"  placeholder="4,708" value="4,708">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        房屋建筑物维护
-                    </td>
-                    <td>
-                        <input type="text" class="input-small"  placeholder="..." value="2,522">
+                        <input type="text" class="input-small"   style="width: 60%" placeholder="0" value="6666">
                     </td>
                 </tr>
                 <tr>
@@ -290,11 +306,11 @@
         <div class="well">
             <table width="100%">
                 <tr>
-                    <td width="70%">
+                    <td width="65%">
                         变动与销售费用合计
                     </td>
                     <td>
-                        72,223
+                        0
                     </td>
                 </tr>
                 <tr>
@@ -302,7 +318,7 @@
                         <br>固定经营费用合计
                     </td>
                     <td>
-                        <br>61,254
+                        <br>999
                     </td>
                 </tr>
                 <tr>
@@ -326,5 +342,6 @@
 
     </div>
 </div>
+
 </div>
 </div>
