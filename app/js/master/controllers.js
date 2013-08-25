@@ -33,7 +33,7 @@ angular.module('myApp.controllers', []).
                 $("#header").removeClass('hide');
                 $("#nav_div").removeClass('hide');
                 $("#report_div").removeClass('span12');
-                $("#report_div").addClass('span10');
+                $("#report_div").addClass('span9');
                 drawReport();
                 $scope.report.isFull = false;
             }
@@ -43,7 +43,7 @@ angular.module('myApp.controllers', []).
                 $('#container_div').addClass('row-fluid');
                 $("#header").addClass('hide');
                 $("#nav_div").addClass('hide');
-                $("#report_div").removeClass('span10');
+                $("#report_div").removeClass('span9');
                 $("#report_div").addClass('span12');
                 drawReport();
                 $scope.report.isFull = true;

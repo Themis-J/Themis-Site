@@ -15,31 +15,25 @@
                         <a href="#"  onclick="return false;" ng-click="showReport(0,0)">税前净利润 </i></a>
                     </li>
                     <li >
-                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">总营业额 </i></a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">总运营利润 </i></a>
                     </li>
                     <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,2)">经营商总毛利 </a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,2)">(月均)运营利润占(月均)销售百分比 </a>
                     </li>
                     <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,3)">经营商总费用 </a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,3)">(月均)所有部门运营利润占毛利比 </a>
                     </li>
                     <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,4)">非经营性损益 </i></a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,4)">总冻结资本占当前总资产比例 </i></a>
                     </li>
                     <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,5)">新车零售销量 </a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,5)">30天以上应收占应收总额百分比 </a>
                     </li>
                     <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,6)">新车总销量 </i></a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,6)">(月均)变动费用占车辆零售毛利比 </i></a>
                     </li>
                     <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,4)">新车零售平均毛利(含返利) </i></a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,5)">二手车销量 </a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="return false;" ng-click="showReport(0,6)">二手车零售平均毛利 </i></a>
+                        <a href="#" onclick="return false;" ng-click="showReport(0,4)">(月均)人工总费用占总毛利比 </i></a>
                     </li>
                 </ul>
             </div>
@@ -50,12 +44,21 @@
 <div class="accordion-group">
     <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-            资产分析      <i class="icon-chevron-right  pull-right"></i>
+            分运营      <i class="icon-chevron-right  pull-right"></i>
         </a>
     </div>
     <div id="collapseTwo" class="accordion-body collapse">
         <div class="accordion-inner">
-            Coming soon...
+            <div style="margin-left:30px">
+                <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)单车零售运营利润 </i></a>
+                    </li>
+                    <li >
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">每零售车辆总水平事业部毛利 </i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -63,12 +66,27 @@
 <div class="accordion-group">
     <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsThree">
-            应收分析            <i class="icon-chevron-right  pull-right"></i>
+            新车部门            <i class="icon-chevron-right  pull-right"></i>
         </a>
     </div>
     <div id="collapsThree" class="accordion-body collapse">
         <div class="accordion-inner">
-            Coming soon...
+            <div style="margin-left:30px">
+                <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)每新车零售运营利润 </i></a>
+                    </li>
+                    <li >
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">单车运营利润占单车总毛利百分比 </i></a>
+                    </li>
+                    <li >
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">(月均)轿车零售毛利率 </i></a>
+                    </li>
+                    <li >
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">(月均)货车零售毛利率 </i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -76,12 +94,21 @@
 <div class="accordion-group">
     <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsFour">
-            变动和销售费用                 <i class="icon-chevron-right  pull-right"></i>
+            二手车部门                 <i class="icon-chevron-right  pull-right"></i>
         </a>
     </div>
     <div  id="collapsFour" class="accordion-body collapse">
         <div class="accordion-inner">
-            Coming soon...
+            <div style="margin-left:30px">
+                <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)每二手车零售运营利润 </i></a>
+                    </li>
+                    <li >
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">二手车零售量与新车零售量比率 </i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -89,12 +116,18 @@
 <div class="accordion-group">
     <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsFive">
-            员工薪资、半固定和固定费用           <i class="icon-chevron-right  pull-right"></i>
+            固定部门           <i class="icon-chevron-right  pull-right"></i>
         </a>
     </div>
     <div   id="collapsFive" class="accordion-body collapse">
         <div  class="accordion-inner">
-            Coming soon...
+            <div style="margin-left:30px">
+                <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)售后运营利润占总售后毛利比 </i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -102,20 +135,68 @@
 <div class="accordion-group">
     <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsSix">
-            部门对比             <i class="icon-chevron-right  pull-right"></i>
+            维修部门            <i class="icon-chevron-right  pull-right"></i>
         </a>
     </div>
     <div  id="collapsSix" class="accordion-body collapse">
         <div class="accordion-inner">
-            Coming soon...
+            <div style="margin-left:30px">
+                <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)机修运营利润占机修毛利比 </i></a>
+                    </li>
+                    <li >
+                        <a href="#" onclick="return false;" ng-click="showReport(0,1)">(月均)机修总工时毛利率 </i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="accordion-group ">
-    <div class="accordion-heading">
-        <button class="btn btn-info btn-small" type="button"  > 下载综合报告  <i class="icon-download-alt"></i></button>
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsSeven">
+                配件部门            <i class="icon-chevron-right  pull-right"></i>
+            </a>
+        </div>
+        <div  id="collapsSeven" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div style="margin-left:30px">
+                    <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)备件部运营利润占备件毛利比 </i></a>
+                        </li>
+                        <li >
+                            <a href="#" onclick="return false;" ng-click="showReport(0,1)">(月均)备件部门总毛利率 </i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsEight">
+                钣喷部门            <i class="icon-chevron-right  pull-right"></i>
+            </a>
+        </div>
+        <div  id="collapsEight" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div style="margin-left:30px">
+                    <ul style="list-style:none;margin-bottom: 0px;font-size: 12px" class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a href="#"  onclick="return false;" ng-click="showReport(0,0)">(月均)钣喷运营利润占毛利百分比 </i></a>
+                        </li>
+                        <li >
+                            <a href="#" onclick="return false;" ng-click="showReport(0,1)">(月均)钣喷总工时毛利率 </i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 </div>
