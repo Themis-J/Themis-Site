@@ -2,13 +2,13 @@
     <ng-include src="'partials/master/header.html'"></ng-include>
 </div>
 
-<div id='container_div' class="container" style="padding-top:90px">
+<div id='container_div' class="container" style="padding-top:95px">
     <div class="row-fluid">
-    <div id="nav_div" class="span2">
+    <div id="nav_div" class="span3">
         <ng-include src="'partials/master/nav.html'" onload="bindEvent()"></ng-include>
     </div>
 
-    <div id="report_div" class="span10 row-fluid" style="padding-left: 60px">
+    <div id="report_div" class="span9 row-fluid" style="padding-left: 60px">
         <div class="span11">
             <div>
             <div class="btn-group">
@@ -38,8 +38,8 @@
         </div>
         <div class="span1">
             <legend>时间</legend>
-            <label>年 <input type="radio" checked></label>
-            <label>月 <input type="radio"></label>
+            <label>年 <input name="optionsRadios" type="radio" checked></label>
+            <label>月 <input name="optionsRadios" type="radio"></label>
         </div>
     </div>
 </div>

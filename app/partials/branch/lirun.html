@@ -1,23 +1,26 @@
-<legend>收入与毛利润 <i class="icon-angle-right"></i>{{depat}}</legend>
+<legend>收入与毛利润 <i class="icon-angle-right"></i>{{depat}}
+    <div class="pull-right">
+        <div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
+                <span style="font-size: 14px">2013年</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <!-- dropdown menu links -->
+            </ul>
+        </div>
+        <div class="btn-group" style="font-size: 30px;padding-right: 5px">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
+                <span style="font-size: 14px">8月</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <!-- dropdown menu links -->
+            </ul>
+        </div>
+    </div>
+</legend>
 <div style="height: 30px">
-    <div class="btn-group">
-        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
-            <span style="font-size: 14px">2013年</span>
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <!-- dropdown menu links -->
-        </ul>
-    </div>
-    <div class="btn-group" style="font-size: 30px;padding-right: 5px">
-        <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
-            <span style="font-size: 14px">8月</span>
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <!-- dropdown menu links -->
-        </ul>
-    </div>
 
     <span style="color:gray">   上次自动保存于{{autoSaveTime}}...</span>
 
@@ -28,162 +31,163 @@
 
 <div class="row-fluid" ng-controller="lirunCtrl">
 <div class="span6">
-<div  style="margin-top:20px">
+<div style="margin-top:20px">
 <label><b>新轿车零售(车型|数量|收入|毛利润)</b></label>
+
 <div class="well">
-    <table  style="font-size: 12px">
+    <table style="font-size: 12px">
         <tr>
             <td width="35%">
                 微型车
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 小型车 Sub Compact
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 紧凑型(A) Compact
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 紧凑型(B) Compact
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 紧凑型(C) Compact
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 中型车(A) Mid-Size
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 中型车(B) Mid-Size
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 中型车(C) Mid-Size
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 大中型(A) Full-Size
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 大中型(A) Full-Size
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
             <td>
                 豪华车 -紧凑型
             </td>
-            <td  width="15%" >
-                <input type="text" class="input-mini"   style="width: 40%" value="5">
+            <td width="15%">
+                <input type="text" class="input-mini" style="width: 40%" value="5">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
             </td>
             <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
             </td>
         </tr>
         <tr>
@@ -197,64 +201,65 @@
     </table>
 </div>
 
-<div  style="margin-top:20px">
+<div style="margin-top:20px">
     <label><b>附加产品业务 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
+
     <div class="well">
         <table>
             <tr>
                 <td>
                     分期收入
                 </td>
-                <td  width="15%" >
-                    <input type="text" class="input-mini"   style="width: 40%" value="5">
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
                 </td>
             </tr>
             <tr>
                 <td>
                     保险收入
                 </td>
-                <td  width="15%" >
-                    <input type="text" class="input-mini"   style="width: 40%" value="5">
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
                 </td>
             </tr>
             <tr>
                 <td>
                     延保收入
                 </td>
-                <td  width="15%" >
-                    <input type="text" class="input-mini"   style="width: 40%" value="5">
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
                 </td>
             </tr>
             <tr>
                 <td>
                     牌照收入
                 </td>
-                <td  width="15%" >
-                    <input type="text" class="input-mini"   style="width: 40%" value="5">
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
                 </td>
                 <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
                 </td>
             </tr>
             <tr>
@@ -269,8 +274,9 @@
     </div>
 </div>
 
-<div  style="margin-top:20px">
+<div style="margin-top:20px">
     <label><b>合计</b></label>
+
     <div class="well">
         <table width="100%">
             <tr>
@@ -313,247 +319,249 @@
 </div>
 
 <div class="span6">
-    <div  style="margin-top:20px">
-        <label><b>新轿车零售(车型|数量|收入|毛利润)</b></label>
-        <div class="well">
-            <table  style="font-size: 12px">
-                <tr>
-                    <td width="40%">
-                        SUV-(A) 紧凑型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(B) 紧凑型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(C) 紧凑型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(A) 中型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(B) 中型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(C) 中型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(A) 大型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(B) 大型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(C) 大型 Compact
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(A) 豪华中型 Luxury Mid
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        SUV-(B) 豪华中型 Luxury Mid
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <br><b>合计</b>
-                    </td>
-                    <td>
-                        <br><b>170,931</b>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+<div style="margin-top:20px">
+    <label><b>新轿车零售(车型|数量|收入|毛利润)</b></label>
 
-    <div  style="margin-top:20px">
-        <label><b>其他收入 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
-        <div class="well">
-            <table>
-                <tr>
-                    <td>
-                        大客户销售返利
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        大客户返利
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        二网销售
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        他店调车
-                    </td>
-                    <td  width="15%" >
-                        <input type="text" class="input-mini"   style="width: 40%" value="5">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="88888">
-                    </td>
-                    <td width="25%">
-                        <input type="text" class="input-mini" style="width: 55%;"  placeholder="0" value="666">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <br><b>合计</b>
-                    </td>
-                    <td>
-                        <br><b>170,931</b>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <div class="well">
+        <table style="font-size: 12px">
+            <tr>
+                <td width="40%">
+                    SUV-(A) 紧凑型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(B) 紧凑型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(C) 紧凑型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(A) 中型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(B) 中型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(C) 中型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(A) 大型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(B) 大型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(C) 大型 Compact
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(A) 豪华中型 Luxury Mid
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SUV-(B) 豪华中型 Luxury Mid
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br><b>合计</b>
+                </td>
+                <td>
+                    <br><b>170,931</b>
+                </td>
+            </tr>
+        </table>
     </div>
+</div>
+
+<div style="margin-top:20px">
+    <label><b>其他收入 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
+
+    <div class="well">
+        <table>
+            <tr>
+                <td>
+                    大客户销售返利
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    大客户返利
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    二网销售
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    他店调车
+                </td>
+                <td width="15%">
+                    <input type="text" class="input-mini" style="width: 40%" value="5">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
+                </td>
+                <td width="25%">
+                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br><b>合计</b>
+                </td>
+                <td>
+                    <br><b>170,931</b>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 </div>
 
 </div>
