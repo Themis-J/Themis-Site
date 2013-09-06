@@ -34,3 +34,11 @@
     top: 0;
     left: 0;
 }
+
+.item_tr{
+    padding-top: 10px;
+}
+
+.hide{
+    display: none;
+}
