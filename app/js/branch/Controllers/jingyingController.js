@@ -1,68 +1,83 @@
 angular.module('jingying.controller', [])
     .controller('jingyingCtrl', ['$scope', 'Dealer', 'DealerService', function ($scope, Dealer, DealerService) {
+        $scope.isBiandongActive = false;
+        $scope.isXiaoshouActive = false;
+        $scope.isRengongActive = false;
+        $scope.isBangudingActive = false;
+        $scope.isGudingActive = false;
+        $scope.isQitaActive = false;
 
-        $scope.even = function (cate) {
-            if (cate.id < 4 || cate.id == 9) {
-                return true;
-            }
-            return false;
-        }
-
-        $scope.odd = function (cate) {
-            if (cate.id > 3) {
-                return true;
-            }
-            return false;
-        }
-
-        if (DealerService.getSelectedDept() != 0) {
-            var generalCates = [1, 2, 3, 4, 5];
-            var generalCateNames = ['变动费用', '销售费用', '人工费用', '半固定费用', '固定费用'];
+        if (DealerService.getSelectedDept() != 7) {
+            $scope.isBiandongActive = true;
+            $scope.isXiaoshouActive = true;
+            $scope.isRengongActive = true;
+            $scope.isBangudingActive = true;
+            $scope.isGudingActive = true;
         }
         else {
-            var generalCates = [9];
-            var generalCateNames = ['其它削项'];
+            $scope.isQitaActive = true;
         }
 
         $scope.generalSales = [];
-        for (var i = 0; i < generalCates.length; i++) {
-            $scope.generalSales[generalCates[i]] = [];
-            $scope.generalSales[generalCates[i]].id = generalCates[i];
-            $scope.generalSales[generalCates[i]].cateName = generalCateNames[i];
-            $scope.generalSales[generalCates[i]].display = 'hide';
-        }
 
-        if (DealerService.getSelectedDept() == 0) {
-            for (var i = 0; i < generalCates.length; i++) {
-                var salesSet = [];
-                var saleItems = Dealer.getGeneral({categoryID: generalCates[i]}, function () {
-                    $.each(saleItems.items, function (index, saleItem) {
-                        saleItem.amount = 0;
-                        salesSet[saleItem.id] = saleItem;
+        var salesSet = [];
+        var saleItems = Dealer.getGeneral({}, function () {
+            $.each(saleItems.items, function (index, saleItem) {
+                saleItem.active = false;
+                salesSet[saleItem.id] = saleItem;
+            });
+
+            var saleRevenues = Dealer.getGeneralJournal({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: DealerService.getSelectedDept()},
+                function () {
+                    $.each(saleRevenues.detail, function (index, saleRevenue) {
+                        var oneSale = salesSet[saleRevenue.itemID];
+                        oneSale.amount = saleRevenue.amount;
                     });
 
-                    var saleRevenues = Dealer.getGeneralJournal({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: DealerService.getSelectedDept(), categoryID: generalCates[i]},
-                        function () {
-                            $.each(saleRevenues.detail, function (index, saleRevenue) {
-                                var oneSale = salesSet[saleRevenue.itemID];
-                                oneSale.amount = saleRevenue.amount;
-                            });
+                    $.each(salesSet, function (index, sale) {
+                        if (sale && sale.id) {
+                            $scope.generalSales.push(sale);
+                        }
+                    });
+                })
+        });
 
-                            $.each(salesSet, function (index, sale) {
-                                if (sale && sale.id) {
-                                    $scope.generalSales[generalCates[i]].push(sale);
-                                }
-                            });
-                        })
-                });
-
-                $scope.generalSales[generalCates[i]].display = '';
-            }
-        }
 
         $scope.toggleMark = function () {
             var navLink = $("#" + $scope.itemIndex + "_" + $scope.depatIndex);
             navLink.children().remove();
             navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+        }
+
+        $scope.autoSaveGeneralRevenue = function()
+        {
+            if (isNaN(this.generalSale.amount))
+            {
+                return;
+            }
+            if(this.generalSale.amount)
+            {
+                var postData = {};
+                postData.dealerID = DealerService.getDealerId();
+                postData.departmentID = DealerService.getSelectedDept();
+                postData.validDate =  DealerService.getValidDate();
+                postData.updateBy =  DealerService.getUserName();
+                postData.detail = [];
+                postData.detail.push({
+                    itemID: this.generalSale.id,
+                    amount:  this.generalSale.amount
+                });
+               var result = Dealer.saveGeneralJournal({},postData,function(){
+                   console.log(result);
+                    this.generalSale.active = true;
+                    var currentDate = new Date();
+                    $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
+                    $scope.autoSaveClass = "alt alt-success";
+                }, function(){
+                    $scope.autoSaveTime =  "自动保存失败";
+                    $scope.autoSaveClass = "alt alt-error";
+                });
+                result.generalSale = generalSale;
+            }
         }
     }]);

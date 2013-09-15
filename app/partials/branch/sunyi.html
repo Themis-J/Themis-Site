@@ -1,50 +1,28 @@
-<legend>经营费用 <i class="icon-angle-right"></i> {{depat}}
-    <div class="pull-right">
-        <div class="btn-group">
-            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
-                <span style="font-size: 14px">2013年</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <!-- dropdown menu links -->
-            </ul>
-        </div>
-        <div class="btn-group" style="font-size: 30px;padding-right: 5px">
-            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
-                <span style="font-size: 14px">8月</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <!-- dropdown menu links -->
-            </ul>
+<div ng-controller="sunyiCtrl">
+    <div style="height: 30px">
+        <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
+
+        <div class="pull-right">
+            <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成<i class="icon-hand-up"></i></button>
         </div>
     </div>
-</legend>
-<div style="height: 30px">
-    <span style="color:gray">   上次自动保存于20点23分12秒0</span>
 
-    <div class="pull-right">
-        <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成<i class="icon-hand-up"></i></button>
-    </div>
-</div>
-
-<div class="row-fluid">
-
-    <div class="span6">
-        <div style="margin-top:20px">
-            <div ng-repeat="generalSale in generalSales | filter:even">
-                <div class="{{generalSale.display}}" >
-                    <label><b>{{general.cateName}}</b></label>
+    <div class="row-fluid">
+        <div class="span6">
+            <div style="margin-top:20px">
+                <div ng-class="{true: '', false: 'hide'}[isJinxiangActive]">
+                    <label><b>非经营性损益进项</b></label>
 
                     <div class="well">
                         <table style="font-size: 12px">
-                            <tr ng-repeat="general in generalSale">
+                            <tr ng-repeat="generalSale in generalSales | filter:{categoryID: 6}">
                                 <td width="35%">
-                                    {{general.name}}
+                                    {{generalSale.name}}
                                 </td>
                                 <td width="25%">
-                                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0"
-                                           ng-model="general.amount">
+                                    <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/"  class="input-mini" style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[generalSale.active]"></i>
                                 </td>
                             </tr>
 
@@ -61,23 +39,22 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="span6">
-        <div style="margin-top:20px">
-            <div ng-repeat="generalSale in generalSales | filter:odd">
-                <div class="{{generalSale.display}}" >
-                    <label><b>{{general.cateName}}</b></label>
+        <div class="span6">
+            <div style="margin-top:20px">
+                <div ng-class="{true: '', false: 'hide'}[isXiaoxiangActive]">
+                    <label><b>非经营性损益削项</b></label>
 
                     <div class="well">
                         <table style="font-size: 12px">
-                            <tr ng-repeat="general in generalSale">
+                            <tr ng-repeat="generalSale in generalSales  | filter:{categoryID: 7}">
                                 <td width="35%">
-                                    {{general.name}}
+                                    {{generalSale.name}}
                                 </td>
                                 <td width="25%">
-                                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0"
-                                           ng-model="general.amount">
+                                    <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/"  class="input-mini" style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[generalSale.active]"></i>
                                 </td>
                             </tr>
 
@@ -92,9 +69,9 @@
                         </table>
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </div>

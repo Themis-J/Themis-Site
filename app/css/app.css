@@ -42,3 +42,10 @@
 .hide{
     display: none;
 }
+
+input.ng-invalid {
+    border: 1px solid darkred;
+}
+input.ng-valid {
+    border: 1px solid green;
+}

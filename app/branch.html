@@ -1,34 +1,39 @@
 <!doctype html>
 <html lang="en" ng-app="branchApp">
 <head>
-  <meta charset="utf-8">
-  <title>广汽集团报表系统</title>
+    <meta charset="utf-8">
+    <title>广汽集团报表系统</title>
 
-  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body style="font-family: '"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif">
-  <div ng-view></div>
+<body style="font-family: '" Helvetica Neue
+", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif">
+<div ng-view></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  -->
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular-route.min.js"></script>
+<script src="lib/angular/angular-resource.min.js"></script>
+<script src="lib/angular/angular-animate.min.js"></script>
 
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-resource.min.js"></script>
+<script src="js/branch/app.js"></script>
+<script src="js/branch/config.js"></script>
+<script src="js/branch/services.js"></script>
+<script src="js/branch/controllers.js"></script>
+<script src="js/branch/filters.js"></script>
+<script src="js/branch/directives.js"></script>
 
-  <script src="js/branch/app.js"></script>
-  <script src="js/branch/config.js"></script>
-  <script src="js/branch/services.js"></script>
-  <script src="js/branch/controllers.js"></script>
-  <script src="js/branch/filters.js"></script>
-  <script src="js/branch/directives.js"></script>
+<script src="js/branch/Controllers/lirunControllers.js"></script>
+<script src="js/branch/Controllers/jingyingController.js"></script>
+<script src="js/branch/Controllers/kucun.js"></script>
+<script src="js/branch/Controllers/zhangkuanController.js"></script>
+<script src="js/branch/Controllers/sunyiController.js"></script>
+<script src="js/branch/Controllers/renyuanController.js"></script>
+<script src="js/branch/Controllers/taxController.js"></script>
 
-  <script src="js/branch/Controllers/lirunControllers.js"></script>
-
-  <script src="lib/jquery/jquery-2.0.2.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/jquery/jquery-2.0.2.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
