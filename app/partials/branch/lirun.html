@@ -1,568 +1,263 @@
-<legend>收入与毛利润 <i class="icon-angle-right"></i>{{depat}}
-    <div class="pull-right">
-        <div class="btn-group">
-            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
-                <span style="font-size: 14px">2013年</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <!-- dropdown menu links -->
-            </ul>
-        </div>
-        <div class="btn-group" style="font-size: 30px;padding-right: 5px">
-            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="font-size: 20px;">
-                <span style="font-size: 14px">8月</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <!-- dropdown menu links -->
-            </ul>
-        </div>
-    </div>
-</legend>
+<div ng-controller="lirunCtrl">
 <div style="height: 30px">
-
-    <span style="color:gray">   上次自动保存于{{autoSaveTime}}...</span>
+    <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
 
     <div class="pull-right">
         <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成 <i class="icon-hand-up"></i></button>
     </div>
 </div>
 
-<div class="row-fluid" ng-controller="lirunCtrl">
+<div class="row-fluid">
 <div class="span6">
-<div style="margin-top:20px">
-<label><b>新轿车零售(车型|数量|收入|毛利润)</b></label>
+    <div style="margin-top:20px">
+        <div ng-class="{true: '', false: 'hide'}[isJiaocheActive]">
+            <label><b>新轿车零售(车型|数量|收入|毛利润)</b></label>
 
-<div class="well">
-    <table style="font-size: 12px">
-        <tr>
-            <td width="35%">
-                微型车
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                小型车 Sub Compact
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                紧凑型(A) Compact
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                紧凑型(B) Compact
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                紧凑型(C) Compact
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                中型车(A) Mid-Size
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                中型车(B) Mid-Size
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                中型车(C) Mid-Size
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                大中型(A) Full-Size
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                大中型(A) Full-Size
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                豪华车 -紧凑型
-            </td>
-            <td width="15%">
-                <input type="text" class="input-mini" style="width: 40%" value="5">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-            </td>
-            <td width="25%">
-                <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <br><b>合计</b>
-            </td>
-            <td>
-                <br><b>170,931</b>
-            </td>
-        </tr>
-    </table>
-</div>
+            <div class="well">
+                <form name="form" ng-repeat="vehivleRevenue in vehicleRevenues | filter: {categoryID: 1}">
+                <table style="font-size: 12px">
+                    <tr>
+                            <td width='35%'>
+                                {{vehivleRevenue.name}}
+                            </td>
+                            <td width="15%">
+                                <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
+                                       placeholder="0"
+                                       ng-model="vehivleRevenue.count" required
+                                       ng-blur="autoSaveVehivleRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"  name = "amount"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="vehivleRevenue.amount" required  ng-change="amountChange(vehicleSummary, vehicleRevenues, vehivleRevenue)"
+                                       ng-blur="autoSaveVehivleRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="vehivleRevenue.margin" required
+                                       ng-blur="autoSaveVehivleRevenue()">
+                                <i class="icon-check-sign" style="color:green"
+                                   ng-class="{true: '', false: 'hide'}[vehivleRevenue.active]"></i>
+                            </td>
+                    </tr>
+                </table>
+                </form>
 
-<div style="margin-top:20px">
-    <label><b>附加产品业务 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
+                <table style="font-size: 12px; width: 100%">
+                    <tr>
+                        <td width='35%'>
+                            合计
+                        </td>
+                        <td width="15%">
+                        </td>
+                        <td width="25%">
+                            {{vehicleSummary[1]}}
+                        </td>
+                        <td width="25%">
+                        </td>
+                    </tr>
+                </table>
 
-    <div class="well">
-        <table>
-            <tr>
-                <td>
-                    分期收入
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    保险收入
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    延保收入
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    牌照收入
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br><b>合计</b>
-                </td>
-                <td>
-                    <br><b>170,931</b>
-                </td>
-            </tr>
-        </table>
+            </div>
+        </div>
+
+        <div ng-class="{true: '', false: 'hide'}[isFujiaActive]">
+            <div style="margin-top:20px">
+                <label><b>附加产品业务 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
+
+                <div class="well">
+                    <form name="form" ng-repeat="sale in sales | filter: {categoryID: 3}">
+                    <table>
+                        <tr>
+                            <td>
+                                {{sale.name}}
+                            </td>
+                            <td width="15%">
+                                <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
+                                       placeholder="0"
+                                       ng-model="sale.count" required ng-blur="autoSaveSalesRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" name="amount"  ng-change="amountChange(salesSummary, sales, sale)"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="sale.margin" required ng-blur="autoSaveSalesRevenue()">
+                                <i class="icon-check-sign" style="color:green"
+                                   ng-class="{true: '', false: 'hide'}[sale.active]"></i>
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[3]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div ng-class="{true: '', false: 'hide'}[isQitaJinxiangActive]">
+            <label><b>其它进项</b></label>
+
+            <div class="well">
+                <form name="form" ng-repeat="generalSale in generalSales">
+                <table style="font-size: 12px">
+                    <tr>
+                        <td width="35%">
+                            {{generalSale.name}}
+                        </td>
+                        <td width="25%">
+                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                                   style="width: 55%;" placeholder="0"
+                                   ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                            <i class="icon-check-sign" style="color:green"
+                               ng-class="{true: '', false: 'hide'}[generalSale.active]"></i>
+                        </td>
+                    </tr>
+                </table>
+                </form>
+
+                <table style="font-size: 12px; width: 100%">
+                    <tr>
+                        <td width='35%'>
+                            合计
+                        </td>
+                        <td width="15%">
+                        </td>
+                        <td width="25%">
+                            {{generalSummary[8]}}
+                        </td>
+                        <td width="25%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
-<div style="margin-top:20px">
-    <label><b>合计</b></label>
+<div class="span6 ">
+    <div style="margin-top:20px">
+        <div ng-class="{true: '', false: 'hide'}[isHuocheActive]">
+            <label><b>新货车零售(车型|数量|收入|毛利润)</b></label>
 
-    <div class="well">
-        <table width="100%">
-            <tr>
-                <td width="70%">
-                    变动与销售费用合计
-                </td>
-                <td>
-                    0
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>固定经营费用合计
-                </td>
-                <td>
-                    <br>61,254
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>全部费用合计
-                </td>
-                <td>
-                    <br>55,321
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>营业利润
-                </td>
-                <td>
-                    <br>1270,931
-                </td>
-            </tr>
-        </table>
+            <div class="well">
+                <form name="form" novalidate  ng-repeat="vehivleRevenue in vehicleRevenues | filter: {categoryID: 2}">
+                    <table style="font-size: 12px">
+                        <tr>
+                            <td width="35%">
+                                {{vehivleRevenue.name}}
+                            </td>
+                            <td width="15%">
+                                <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
+                                       placeholder="0"
+                                       ng-model="vehivleRevenue.count" required
+                                       ng-blur="autoSaveVehivleRevenue('form2')">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"   name="amount" ng-change="amountChange(vehicleSummary, vehicleRevenues, vehivleRevenue)"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="vehivleRevenue.amount" required
+                                       ng-blur="autoSaveVehivleRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="vehivleRevenue.margin" required
+                                       ng-blur="autoSaveVehivleRevenue()">
+                                <i class="icon-check-sign" style="color:green"
+                                   ng-class="{true: '', false: 'hide'}[vehivleRevenue.active]"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+                <table style="font-size: 12px; width: 100%">
+                    <tr>
+                        <td width='35%'>
+                            合计
+                        </td>
+                        <td width="15%">
+                        </td>
+                        <td width="25%">
+                            {{vehicleSummary[2]}}
+                        </td>
+                        <td width="25%">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div ng-class="{true: '', false: 'hide'}[isQitaShouruActive]">
+            <div style="margin-top:20px">
+                <label><b>其他收入 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
+
+                <div class="well">
+                    <form name="form" novalidate  ng-repeat="sale in sales  | filter: {categoryID: 7}">
+                    <table>
+                        <tr>
+                            <td>
+                                {{sale.name}}
+                            </td>
+                            <td width="15%">
+                                <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
+                                       placeholder="0"
+                                       ng-model="sale.count" required ng-blur="autoSaveSalesRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(salesSummary, sales, sale)"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+                            </td>
+                            <td width="25%">
+                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                       style="width: 55%;" placeholder="0"
+                                       ng-model="sale.margin" required ng-blur="autoSaveSalesRevenue()">
+                                <i class="icon-check-sign" style="color:green"
+                                   ng-class="{true: '', false: 'hide'}[sale.active]"></i>
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[7]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
-</div>
 
 </div>
-
-<div class="span6">
-<div style="margin-top:20px">
-    <label><b>新轿车零售(车型|数量|收入|毛利润)</b></label>
-
-    <div class="well">
-        <table style="font-size: 12px">
-            <tr>
-                <td width="40%">
-                    SUV-(A) 紧凑型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(B) 紧凑型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(C) 紧凑型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(A) 中型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(B) 中型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(C) 中型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(A) 大型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(B) 大型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(C) 大型 Compact
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(A) 豪华中型 Luxury Mid
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SUV-(B) 豪华中型 Luxury Mid
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br><b>合计</b>
-                </td>
-                <td>
-                    <br><b>170,931</b>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<div style="margin-top:20px">
-    <label><b>其他收入 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
-
-    <div class="well">
-        <table>
-            <tr>
-                <td>
-                    大客户销售返利
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    大客户返利
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    二网销售
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    他店调车
-                </td>
-                <td width="15%">
-                    <input type="text" class="input-mini" style="width: 40%" value="5">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="88888">
-                </td>
-                <td width="25%">
-                    <input type="text" class="input-mini" style="width: 55%;" placeholder="0" value="666">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br><b>合计</b>
-                </td>
-                <td>
-                    <br><b>170,931</b>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-</div>
-
 </div>
 </div>
