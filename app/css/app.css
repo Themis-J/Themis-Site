@@ -34,3 +34,18 @@
     top: 0;
     left: 0;
 }
+
+.item_tr{
+    padding-top: 10px;
+}
+
+.hide{
+    display: none;
+}
+
+input.ng-invalid {
+    border: 1px solid darkred;
+}
+input.ng-valid {
+    border: 1px solid green;
+}
