@@ -1,9 +1,10 @@
 <div ng-controller="kucunCtrl">
 <div style="height: 30px">
-    <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
+    <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
 
     <div class="pull-right">
-        <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成<i class="icon-hand-up"></i></button>
+        <button  ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()"><span> 标记为完成 <i class="icon-hand-up"></i></span></button>
+        <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign" style="color:green;display:inline"></i>已完成</span>
     </div>
 </div>
 
@@ -12,8 +13,8 @@
 <div class="span6">
     <div style="margin-top:20px">
         <div ng-repeat="accountReceivable in accountReceivables | filter: {id:1}| filter:{name: '本品牌新车库存台次'}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}}</b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -22,18 +23,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -42,8 +38,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:2}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -52,18 +48,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -72,8 +63,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:3}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -82,18 +73,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -102,8 +88,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:4}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -112,18 +98,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -132,8 +113,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:5}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -142,18 +123,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -162,8 +138,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:6}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -172,18 +148,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -196,8 +167,8 @@
 <div class="span6">
     <div style="margin-top:20px">
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:7}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -206,18 +177,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -226,8 +192,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:8}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -236,18 +202,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -256,8 +217,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:9}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -266,18 +227,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -286,8 +242,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:10}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -296,18 +252,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
@@ -316,8 +267,8 @@
         </div>
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:11}">
-            <div >
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+            <div>
+                <label><b>{{accountReceivable.name}} </b></label>
 
                 <div class="well">
                     <table style="font-size: 12px">
@@ -326,18 +277,13 @@
                                 {{accountInRange.durationDesc}}
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
-                                       ng-model="accountInRange.amount" required ng-blur="autoSaveAccountReceivables()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[accountInRange.active]"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <br><b>合计</b>
-                            </td>
-                            <td>
-                                <br><b>170,931</b>
+                                <form name="form">
+                                    <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="accountInRange.amount" required
+                                           ng-blur="autoSaveAccountReceivables()">
+                                    <i ng-class="accountInRange.sign"></i>
+                                </form>
                             </td>
                         </tr>
                     </table>
