@@ -1,9 +1,10 @@
 <div ng-controller="sunyiCtrl">
     <div style="height: 30px">
-        <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
+        <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
 
         <div class="pull-right">
-            <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成<i class="icon-hand-up"></i></button>
+            <button  ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()"><span> 标记为完成 <i class="icon-hand-up"></i></span></button>
+            <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign" style="color:green;display:inline"></i>已完成</span>
         </div>
     </div>
 
@@ -14,24 +15,29 @@
                     <label><b>非经营性损益进项</b></label>
 
                     <div class="well">
+                        <form name="form" ng-repeat="generalSale in generalSales | filter:{categoryID: 6}">
                         <table style="font-size: 12px">
-                            <tr ng-repeat="generalSale in generalSales | filter:{categoryID: 6}">
+                            <tr>
                                 <td width="35%">
                                     {{generalSale.name}}
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/"  class="input-mini" style="width: 55%;" placeholder="0"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"    name = "amount"
                                            ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
-                                    <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[generalSale.active]"></i>
+                                    <i   ng-class="generalSale.sign"></i>
                                 </td>
                             </tr>
+                        </table>
+                         </form>
 
+                        <table style="font-size: 12px; width: 100%">
                             <tr>
-                                <td>
-                                    <br><b>合计</b>
+                                <td width='35%'>
+                                    合计
                                 </td>
-                                <td>
-                                    <br><b>170,931</b>
+                                <td width="15%">
+                                    {{generalSummary[6]}}
                                 </td>
                             </tr>
                         </table>
@@ -46,24 +52,30 @@
                     <label><b>非经营性损益削项</b></label>
 
                     <div class="well">
+                        <form name="form" ng-repeat="generalSale in generalSales | filter:{categoryID: 7}">
                         <table style="font-size: 12px">
-                            <tr ng-repeat="generalSale in generalSales  | filter:{categoryID: 7}">
+                            <tr>
                                 <td width="35%">
                                     {{generalSale.name}}
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/"  class="input-mini" style="width: 55%;" placeholder="0"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"    name = "amount"
                                            ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
-                                    <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[generalSale.active]"></i>
+                                    <i ng-class="generalSale.sign"></i>
+
                                 </td>
                             </tr>
+                        </table>
+                        </form>
 
+                        <table style="font-size: 12px; width: 100%">
                             <tr>
-                                <td>
-                                    <br><b>合计</b>
+                                <td width='35%'>
+                                    合计
                                 </td>
-                                <td>
-                                    <br><b>170,931</b>
+                                <td width="15%">
+                                    {{generalSummary[7]}}
                                 </td>
                             </tr>
                         </table>

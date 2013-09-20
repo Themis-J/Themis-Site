@@ -1,9 +1,10 @@
 <div ng-controller="lirunCtrl">
 <div style="height: 30px">
-    <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
+    <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
 
     <div class="pull-right">
-        <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成 <i class="icon-hand-up"></i></button>
+        <button  ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()"><span> 标记为完成 <i class="icon-hand-up"></i></span></button>
+            <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign" style="color:green;display:inline"></i>已完成</span>
     </div>
 </div>
 
@@ -27,7 +28,7 @@
                                        ng-blur="autoSaveVehivleRevenue()">
                             </td>
                             <td width="25%">
-                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"  name = "amount"
+                                <input type="text"  ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"  name = "amount"
                                        style="width: 55%;" placeholder="0"
                                        ng-model="vehivleRevenue.amount" required  ng-change="amountChange(vehicleSummary, vehicleRevenues, vehivleRevenue)"
                                        ng-blur="autoSaveVehivleRevenue()">
@@ -37,8 +38,8 @@
                                        style="width: 55%;" placeholder="0"
                                        ng-model="vehivleRevenue.margin" required
                                        ng-blur="autoSaveVehivleRevenue()">
-                                <i class="icon-check-sign" style="color:green"
-                                   ng-class="{true: '', false: 'hide'}[vehivleRevenue.active]"></i>
+                                <i   
+                                   ng-class="vehivleRevenue.sign"></i>
                             </td>
                     </tr>
                 </table>
@@ -74,21 +75,25 @@
                                 {{sale.name}}
                             </td>
                             <td width="15%">
-                                <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
-                                       placeholder="0"
-                                       ng-model="sale.count" required ng-blur="autoSaveSalesRevenue()">
+                                <input  ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
+                                        placeholder="0"
+                                        ng-model="sale.count" required ng-blur="autoSaveSalesRevenue()">
                             </td>
                             <td width="25%">
-                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" name="amount"  ng-change="amountChange(salesSummary, sales, sale)"
-                                       style="width: 55%;" placeholder="0"
-                                       ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+                                <input  ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(salesSummary, sales, sale)"
+                                        style="width: 55%;" placeholder="0"
+                                        ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+
+                                <input  ng-if="sale.journalType == 'Expense'" type="text" ng-pattern="/^((-\d+(\.\d+)?)|(0+(\.0+)?))$/" class="input-mini"   name="amount"   ng-change="amountChange(salesSummary, sales, sale)"
+                                        style="width: 55%;" placeholder="0"
+                                        ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
                             </td>
                             <td width="25%">
-                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
-                                       style="width: 55%;" placeholder="0"
-                                       ng-model="sale.margin" required ng-blur="autoSaveSalesRevenue()">
-                                <i class="icon-check-sign" style="color:green"
-                                   ng-class="{true: '', false: 'hide'}[sale.active]"></i>
+                                <input  ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                        style="width: 55%;" placeholder="0"
+                                        ng-model="sale.margin" required ng-blur="autoSaveSalesRevenue()">
+                                <i
+                                        ng-class="sale.sign"></i>
                             </td>
                         </tr>
                     </table>
@@ -123,11 +128,11 @@
                             {{generalSale.name}}
                         </td>
                         <td width="25%">
-                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                            <input type="text"  ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(generalSummary, generalSales, generalSale)"
                                    style="width: 55%;" placeholder="0"
                                    ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
-                            <i class="icon-check-sign" style="color:green"
-                               ng-class="{true: '', false: 'hide'}[generalSale.active]"></i>
+                            <i  
+                               ng-class="generalSale.sign"></i>
                         </td>
                     </tr>
                 </table>
@@ -135,15 +140,11 @@
 
                 <table style="font-size: 12px; width: 100%">
                     <tr>
-                        <td width='35%'>
+                        <td width='30%'>
                             合计
                         </td>
-                        <td width="15%">
-                        </td>
-                        <td width="25%">
+                        <td width="40%" style="text-align: center">
                             {{generalSummary[8]}}
-                        </td>
-                        <td width="25%">
                         </td>
                     </tr>
                 </table>
@@ -171,7 +172,7 @@
                                        ng-blur="autoSaveVehivleRevenue('form2')">
                             </td>
                             <td width="25%">
-                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"   name="amount" ng-change="amountChange(vehicleSummary, vehicleRevenues, vehivleRevenue)"
+                                <input type="text"  ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"   name="amount" ng-change="amountChange(vehicleSummary, vehicleRevenues, vehivleRevenue)"
                                        style="width: 55%;" placeholder="0"
                                        ng-model="vehivleRevenue.amount" required
                                        ng-blur="autoSaveVehivleRevenue()">
@@ -181,8 +182,8 @@
                                        style="width: 55%;" placeholder="0"
                                        ng-model="vehivleRevenue.margin" required
                                        ng-blur="autoSaveVehivleRevenue()">
-                                <i class="icon-check-sign" style="color:green"
-                                   ng-class="{true: '', false: 'hide'}[vehivleRevenue.active]"></i>
+                                <i 
+                                   ng-class="vehivleRevenue.sign"></i>
                             </td>
                         </tr>
                     </table>
@@ -218,21 +219,25 @@
                                 {{sale.name}}
                             </td>
                             <td width="15%">
-                                <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
+                                <input  ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
                                        placeholder="0"
                                        ng-model="sale.count" required ng-blur="autoSaveSalesRevenue()">
                             </td>
                             <td width="25%">
-                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(salesSummary, sales, sale)"
+                                <input  ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"   name="amount"   ng-change="amountChange(salesSummary, sales, sale)"
                                        style="width: 55%;" placeholder="0"
                                        ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+
+                                <input  ng-if="sale.journalType == 'Expense'" type="text" ng-pattern="/^((-\d+(\.\d+)?)|(0+(\.0+)?))$/" class="input-mini"   name="amount"   ng-change="amountChange(salesSummary, sales, sale)"
+                                        style="width: 55%;" placeholder="0"
+                                        ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
                             </td>
                             <td width="25%">
-                                <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                <input  ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
                                        style="width: 55%;" placeholder="0"
                                        ng-model="sale.margin" required ng-blur="autoSaveSalesRevenue()">
-                                <i class="icon-check-sign" style="color:green"
-                                   ng-class="{true: '', false: 'hide'}[sale.active]"></i>
+                                <i 
+                                   ng-class="sale.sign"></i>
                             </td>
                         </tr>
                     </table>

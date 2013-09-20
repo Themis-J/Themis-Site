@@ -1,9 +1,12 @@
 <div ng-controller="renyuanCtrl">
     <div style="height: 30px">
-        <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
+        <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
 
         <div class="pull-right">
-            <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成 <i class="icon-hand-up"></i></button>
+            <button ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()">
+                <span> 标记为完成 <i class="icon-hand-up"></i></span></button>
+            <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign"
+                                                                  style="color:green;display:inline"></i>已完成</span>
         </div>
     </div>
 
@@ -14,41 +17,32 @@
                     <label><b>维修部 (标准工时收费 | 有效工时收费 | 技工平均工资)</b></label>
 
                     <div class="well">
-                        <form name="jiaoche" novalidate>
+                        <form name="form" ng-repeat="employeeFee in employeeFees | filter: {dept: 4}">
                             <fieldset>
                                 <table style="font-size: 12px">
-                                    <tr ng-repeat="employeeFee in employeeFees | filter: {dept: 4}">
+                                    <tr>
                                         <td width='35%'>
                                             {{employeeFee.name}}
                                         </td>
                                         <td width="15%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
                                                    style="width: 40%" placeholder="0"
+                                                   ng-model="employeeFee.data[0].amount" required
+                                                   ng-blur="autoSaveFee()">
+                                        </td>
+                                        <td width="25%">
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
+                                                   style="width: 55%;" placeholder="0"
                                                    ng-model="employeeFee.data[1].amount" required
                                                    ng-blur="autoSaveFee()">
                                         </td>
                                         <td width="25%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
                                                    style="width: 55%;" placeholder="0"
                                                    ng-model="employeeFee.data[2].amount" required
                                                    ng-blur="autoSaveFee()">
-                                        </td>
-                                        <td width="25%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
-                                                   ng-model="employeeFee.data[3].amount" required
-                                                   ng-blur="autoSaveFee()">
-                                            <i class="icon-check-sign" style="color:green"
-                                               ng-class="{true: '', false: 'hide'}[employeeFee.active]"></i>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <br><b>合计</b>
-                                        </td>
-                                        <td>
-                                            <br><b>0</b>
+                                            <i
+                                                    ng-class="employeeFee.sign"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -61,29 +55,20 @@
                     <label><b>维修部 - 当月数据</b></label>
 
                     <div class="well">
-                        <form name="jiaoche" novalidate>
+                        <form name="form" ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 4}">
                             <fieldset>
                                 <table style="font-size: 12px">
-                                    <tr ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 4}">
+                                    <tr>
                                         <td width='35%'>
                                             {{employeeSummary.name}}
                                         </td>
                                         <td width="25%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
                                                    style="width: 55%;" placeholder="0"
                                                    ng-model="employeeSummary.amount" required
                                                    ng-blur="autoSaveFeeSummary()">
-                                            <i class="icon-check-sign" style="color:green"
-                                               ng-class="{true: '', false: 'hide'}[employeeSummary.active]"></i>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <br><b>合计</b>
-                                        </td>
-                                        <td>
-                                            <br><b>0</b>
+                                            <i
+                                                    ng-class="employeeSummary.sign"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -96,29 +81,20 @@
                     <label><b>维修部</b></label>
 
                     <div class="well">
-                        <form name="jiaoche" novalidate>
+                        <form name="form" ng-repeat="hrAllocation in hrAllocations | filter: {dept: 4}">
                             <fieldset>
                                 <table style="font-size: 12px">
-                                    <tr ng-repeat="hrAllocation in hrAllocations | filter: {dept: 4}">
+                                    <tr>
                                         <td width='35%'>
                                             {{hrAllocation.name}}
                                         </td>
                                         <td width="25%">
-                                            <input type="text"  class="input-mini"
+                                            <input type="text" class="input-mini" ng-pattern="/^\d+(\.\d+)?$/"
                                                    style="width: 55%;" placeholder="0"
                                                    ng-model="hrAllocation.allocation" required
                                                    ng-blur="autoSaveAllocation()">
-                                            <i class="icon-check-sign" style="color:green"
-                                               ng-class="{true: '', false: 'hide'}[hrAllocation.active]"></i>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <br><b>合计</b>
-                                        </td>
-                                        <td>
-                                            <br><b>0</b>
+                                            <i
+                                                    ng-class="hrAllocation.sign"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -135,41 +111,32 @@
                     <label><b>钣喷部 (标准工时收费 | 有效工时收费 | 技工平均工资)</b></label>
 
                     <div class="well">
-                        <form name="jiaoche" novalidate>
+                        <form name="form" ng-repeat="employeeFee in employeeFees | filter: {dept: 6}">
                             <fieldset>
                                 <table style="font-size: 12px">
-                                    <tr ng-repeat="employeeFee in employeeFees | filter: {dept: 6}">
+                                    <tr>
                                         <td width='35%'>
                                             {{employeeFee.name}}
                                         </td>
                                         <td width="15%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
                                                    style="width: 40%" placeholder="0"
+                                                   ng-model="employeeFee.data[0].amount" required
+                                                   ng-blur="autoSaveFee()">
+                                        </td>
+                                        <td width="25%">
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
+                                                   style="width: 55%;" placeholder="0"
                                                    ng-model="employeeFee.data[1].amount" required
                                                    ng-blur="autoSaveFee()">
                                         </td>
                                         <td width="25%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
                                                    style="width: 55%;" placeholder="0"
                                                    ng-model="employeeFee.data[2].amount" required
                                                    ng-blur="autoSaveFee()">
-                                        </td>
-                                        <td width="25%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
-                                                   ng-model="employeeFee.data[3].amount" required
-                                                   ng-blur="autoSaveFee()">
-                                            <i class="icon-check-sign" style="color:green"
-                                               ng-class="{true: '', false: 'hide'}[employeeFee.active]"></i>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <br><b>合计</b>
-                                        </td>
-                                        <td>
-                                            <br><b>0</b>
+                                            <i
+                                                    ng-class="employeeFee.sign"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -179,32 +146,23 @@
                 </div>
 
                 <div ng-class="{true: '', false: 'hide'}[isBanpensummaryActive]">
-                    <label><b>维修部 - 当月数据</b></label>
+                    <label><b>钣喷部 - 当月数据</b></label>
 
                     <div class="well">
-                        <form name="jiaoche" novalidate>
+                        <form name="form" ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 6}">
                             <fieldset>
                                 <table style="font-size: 12px">
-                                    <tr ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 6}">
+                                    <tr>
                                         <td width='35%'>
                                             {{employeeSummary.name}}
                                         </td>
                                         <td width="25%">
-                                            <input type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini"
+                                            <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
                                                    style="width: 55%;" placeholder="0"
                                                    ng-model="employeeSummary.amount" required
                                                    ng-blur="autoSaveFeeSummary()">
-                                            <i class="icon-check-sign" style="color:green"
-                                               ng-class="{true: '', false: 'hide'}[employeeSummary.active]"></i>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <br><b>合计</b>
-                                        </td>
-                                        <td>
-                                            <br><b>0</b>
+                                            <i
+                                                    ng-class="employeeSummary.sign"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -214,32 +172,23 @@
                 </div>
 
                 <div ng-class="{true: '', false: 'hide'}[isBanpenacclocationActive]">
-                    <label><b>维修部</b></label>
+                    <label><b>钣喷部</b></label>
 
                     <div class="well">
-                        <form name="jiaoche" novalidate>
+                        <form name="form" ng-repeat="hrAllocation in hrAllocations | filter: {dept: 6}">
                             <fieldset>
                                 <table style="font-size: 12px">
-                                    <tr ng-repeat="hrAllocation in hrAllocations | filter: {dept: 6}">
+                                    <tr>
                                         <td width='35%'>
                                             {{hrAllocation.name}}
                                         </td>
                                         <td width="25%">
-                                            <input type="text"  class="input-mini"
+                                            <input type="text" class="input-mini" ng-pattern="/^\d+(\.\d+)?$/"
                                                    style="width: 55%;" placeholder="0"
                                                    ng-model="hrAllocation.allocation" required
                                                    ng-blur="autoSaveAllocation()">
-                                            <i class="icon-check-sign" style="color:green"
-                                               ng-class="{true: '', false: 'hide'}[hrAllocation.active]"></i>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <br><b>合计</b>
-                                        </td>
-                                        <td>
-                                            <br><b>0</b>
+                                            <i
+                                                    ng-class="hrAllocation.sign"></i>
                                         </td>
                                     </tr>
                                 </table>

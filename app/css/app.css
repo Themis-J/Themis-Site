@@ -49,3 +49,22 @@ input.ng-invalid {
 input.ng-valid {
     border: 1px solid green;
 }
+.green{
+    color: green;
+}
+
+.red{
+    color: darkred;
+}
+
+td{
+    padding-bottom: 15px
+}
+
+form{
+    margin-bottom: 0px
+}
+
+.ui-datepicker-calendar {
+    display: none;
+}
