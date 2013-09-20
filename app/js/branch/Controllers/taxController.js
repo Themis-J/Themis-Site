@@ -1,5 +1,6 @@
 angular.module('tax.controller', [])
     .controller('taxCtrl', ['$scope', 'Dealer', 'DealerService', function ($scope, Dealer, DealerService) {
+        $scope.isDone =  ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
 
         $scope.tax = null;
         $scope.active = false;
@@ -7,15 +8,9 @@ angular.module('tax.controller', [])
             $scope.tax = tax.tax;
         });
 
-        $scope.toggleMark = function () {
-            var navLink = $("#" + $scope.itemIndex + "_" + $scope.depatIndex);
-            navLink.children().remove();
-            navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
-        }
-
         $scope.autoSaveTax = function()
         {
-            if (isNaN($scope.tax))
+            if (this.form.invalid)
             {
                 return;
             }
@@ -24,14 +19,46 @@ angular.module('tax.controller', [])
             postData.validDate =  DealerService.getValidDate();
             postData.updateBy =  DealerService.getUserName();
             postData.tax = $scope.tax;
-            $scope.active = true;
-            Dealer.saveTax({},postData, function(){
+
+            var success = function(){
+                $scope.sign = "icon-check-sign green";
                 var currentDate = new Date();
                 $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
-                $scope.autoSaveClass = "alt alt-success";
-            }, function(){
+                $scope.autoSaveClass = "text-success";
+            };
+
+            var failed = function()
+            {
+                $scope.sign = "icon-remove-sign red";
                 $scope.autoSaveTime =  "自动保存失败";
-                $scope.autoSaveClass = "alt alt-error";
+                $scope.autoSaveClass = "text-error";
+            }
+
+            Dealer.saveTax({},postData,   $.proxy(success, this), $.proxy(failed, this));
+        }
+
+        $scope.toggleMark = function () {
+            var postData = {};
+            postData.dealerID = DealerService.getDealerId();
+            postData.itemID =  DealerService.getSelectedMenu();
+            postData.validDate =  DealerService.getValidDate();
+            postData.updateBy =  DealerService.getUserName();
+
+            Dealer.saveStatus({}, postData,function(){
+                var navLink = $("#" + DealerService.getSelectedMenu());
+                navLink.children().remove();
+                if (!$scope.isDone)
+                {
+                    $scope.$parent.$parent.doneMenus.push(parseInt(DealerService.getSelectedMenu()));
+                    navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+                }
+                else
+                {
+                    $scope.$parent.$parent.doneMenus = jQuery.grep($scope.$parent.$parent.doneMenus, function(value) {
+                        return value != parseInt(DealerService.getSelectedMenu());
+                    });
+                }
+                $scope.isDone = !$scope.isDone;
             });
         }
     }]);

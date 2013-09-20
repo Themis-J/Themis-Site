@@ -1,5 +1,7 @@
 angular.module('lirun.controller', [])
     .controller('lirunCtrl', ['$scope', 'Dealer', 'DealerService', '$filter', function ($scope, Dealer, DealerService, $filter) {
+        $scope.isDone =  ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
+
         $scope.isJiaocheActive = false;
         $scope.isHuocheActive = false;
         $scope.isQitaJinxiangActive = false;
@@ -21,7 +23,7 @@ angular.module('lirun.controller', [])
                 $.each(filtered, function(index, filteredOne){
                     if (!isNaN(filteredOne.amount))
                     {
-                        newSummary += parseInt(filteredOne.amount);
+                        newSummary += Number(filteredOne.amount);
                     }
                 });
                 var summary = eval(type);
@@ -37,7 +39,7 @@ angular.module('lirun.controller', [])
             var vehicleSet = [];
             var vehicles = Dealer.getVehicles({}, function () {
                 $.each(vehicles.items, function (index, vehicle) {
-                    vehicle.active = false;
+                    vehicle.sign = "";
                     vehicleSet[vehicle.id] = vehicle;
                     $scope.vehicleSummary[vehicle.categoryID] = 0;
                 });
@@ -51,7 +53,7 @@ angular.module('lirun.controller', [])
                             oneVehicle.margin = vehicle.margin;
                             if (!isNaN(oneVehicle.amount))
                             {
-                                $scope.vehicleSummary[vehicle.categoryID] += parseInt(oneVehicle.amount);
+                                $scope.vehicleSummary[vehicle.categoryID] += Number(oneVehicle.amount);
                             }
                         });
 
@@ -74,7 +76,7 @@ angular.module('lirun.controller', [])
             var salesSet = [];
             var saleItems = Dealer.getSales({}, function () {
                 $.each(saleItems.items, function (index, saleItem) {
-                    saleItem.active = false;
+                    saleItem.sign = "";
                     salesSet[saleItem.id] = saleItem;
                     $scope.salesSummary[saleItem.categoryID] = 0;
                 });
@@ -88,7 +90,7 @@ angular.module('lirun.controller', [])
                             oneSale.margin = saleRevenue.margin;
                             if (!isNaN(oneSale.amount))
                             {
-                                $scope.salesSummary[oneSale.categoryID] += parseInt(oneSale.amount);
+                                $scope.salesSummary[oneSale.categoryID] += Number(oneSale.amount);
                             }
                         });
 
@@ -109,7 +111,7 @@ angular.module('lirun.controller', [])
             var generalSet = [];
             var genetalItems = Dealer.getGeneral({categoryID: 8}, function () {
                 $.each(genetalItems.items, function (index, saleItem) {
-                    saleItem.active = false;
+                    saleItem.sign = "";
                     generalSet[saleItem.id] = saleItem;
                     $scope.generalSummary[saleItem.categoryID] = 0;
                 });
@@ -121,7 +123,7 @@ angular.module('lirun.controller', [])
                             oneSale.amount = saleRevenue.amount;
                             if (!isNaN(oneSale.amount))
                             {
-                                $scope.generalSummary[oneSale.categoryID] += parseInt(oneSale.amount);
+                                $scope.generalSummary[oneSale.categoryID] += Number(oneSale.amount);
                             }
                         });
 
@@ -132,12 +134,6 @@ angular.module('lirun.controller', [])
                         });
                     })
             });
-        }
-
-        $scope.toggleMark = function () {
-            var navLink = $("#" + DealerService.getSelectedItem() + "_" + DealerService.getSelectedDept());
-            navLink.children().remove();
-            navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
         }
 
         $scope.autoSaveVehivleRevenue = function(proxy)
@@ -156,15 +152,22 @@ angular.module('lirun.controller', [])
                     margin: this.vehivleRevenue.margin,
                     count: this.vehivleRevenue.count
                 });
-                Dealer.saveVehicleRevenue({},postData,function(){
-                    this.vehivleRevenue.active = true;
+
+                var success = function(){
+                    this.vehivleRevenue.sign = "icon-check-sign green";
                     var currentDate = new Date();
                     $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
-                    $scope.autoSaveClass = "alt alt-success";
-                }, function(){
+                    $scope.autoSaveClass = "text-success";
+                };
+
+                var failed = function()
+                {
+                    this.vehivleRevenue.sign = "icon-remove-sign red";
                     $scope.autoSaveTime =  "自动保存失败";
-                    $scope.autoSaveClass = "alt alt-error";
-                });
+                    $scope.autoSaveClass = "text-error";
+                };
+
+                Dealer.saveVehicleRevenue({},postData,$.proxy(success, this), $.proxy(failed, this));
             }
         }
 
@@ -184,15 +187,23 @@ angular.module('lirun.controller', [])
                     margin: this.sale.margin,
                     count: this.sale.count
                 });
-                Dealer.saveSalesRevenue({},postData,function(a,b,c,d){
-                    this.sale.active = true;
+
+                function success()
+                {
+                    this.sale.sign = "icon-check-sign green";
                     var currentDate = new Date();
                     $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
-                    $scope.autoSaveClass = "alt alt-success";
-                }, function(){
+                    $scope.autoSaveClass = "text-success";
+                };
+
+                function failed()
+                {
+                    this.sale.sign = "icon-remove-sign red";
                     $scope.autoSaveTime =  "自动保存失败";
-                    $scope.autoSaveClass = "alt alt-error";
-                });
+                    $scope.autoSaveClass = "text-error";
+                };
+
+                Dealer.saveSalesRevenue({},postData, $.proxy(success,this), $.proxy(failed,this));
             }
         }
 
@@ -210,16 +221,47 @@ angular.module('lirun.controller', [])
                     itemID: this.generalSale.id,
                     amount:  this.generalSale.amount
                 });
-                Dealer.saveGeneralJournal({},postData,function(){
-                    this.generalSale.active = true;
-                    var currentDate = new Date();
-                    $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
-                    $scope.autoSaveClass = "alt alt-success";
-                }, function(){
+
+               var success = function(){
+                   this.generalSale.sign = "icon-check-sign green";
+                   var currentDate = new Date();
+                   $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
+                   $scope.autoSaveClass = "text-success";
+               };
+
+                var failed = function()
+                {
+                    this.generalSale.sign = "icon-remove-sign red";
                     $scope.autoSaveTime =  "自动保存失败";
-                    $scope.autoSaveClass = "alt alt-error";
-                });
+                    $scope.autoSaveClass = "text-error";
+                }
+
+                Dealer.saveGeneralJournal({},postData, $.proxy(success, this), $.proxy(failed, this));
             }
         }
 
+        $scope.toggleMark = function () {
+            var postData = {};
+            postData.dealerID = DealerService.getDealerId();
+            postData.itemID =  DealerService.getSelectedMenu();
+            postData.validDate =  DealerService.getValidDate();
+            postData.updateBy =  DealerService.getUserName();
+
+            Dealer.saveStatus({}, postData,function(){
+                var navLink = $("#" + DealerService.getSelectedMenu());
+                navLink.children().remove();
+                if (!$scope.isDone)
+                {
+                    $scope.$parent.$parent.doneMenus.push(parseInt(DealerService.getSelectedMenu()));
+                    navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+                }
+                else
+                {
+                    $scope.$parent.$parent.doneMenus = jQuery.grep($scope.$parent.$parent.doneMenus, function(value) {
+                        return value != parseInt(DealerService.getSelectedMenu());
+                    });
+                }
+                $scope.isDone = !$scope.isDone;
+            });
+        }
     }]);

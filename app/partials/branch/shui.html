@@ -1,9 +1,10 @@
 <div ng-controller="taxCtrl">
 <div style="height: 30px">
-    <span style="{{autoSaveClass}}">{{autoSaveTime}}</span>
+    <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
 
     <div class="pull-right">
-        <button class="btn" type="button" ng-click="toggleMark()"> 标记为完成<i class="icon-hand-up"></i></button>
+        <button  ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()"><span> 标记为完成 <i class="icon-hand-up"></i></span></button>
+        <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign" style="color:green;display:inline"></i>已完成</span>
     </div>
 </div>
 
@@ -20,9 +21,11 @@
                                 当月所得税
                             </td>
                             <td width="25%">
-                                <input  type="text" ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
+                                <form name="form">
+                                <input  type="text"  ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" style="width: 55%;" placeholder="0"
                                         ng-model="tax" required ng-blur="autoSaveTax()">
-                                <i class="icon-check-sign" style="color:green"  ng-class="{true: '', false: 'hide'}[active]"></i>
+                                <i ng-class="sign"></i>
+                                 </form>
                             </td>
                         </tr>
                     </table>
