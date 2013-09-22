@@ -1,0 +1,117 @@
+<div ng-controller="lirunCtrl">
+    <div style="height: 30px">
+        <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
+
+        <div class="pull-right">
+            <button ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button"
+                    ng-click="toggleMark()"><span> 标记为完成 <i
+                    class="icon-hand-up"></i></span></button>
+        <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign"
+                                                              style="color:green;display:inline"></i>已完成</span>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <div style="margin-top:20px">
+                <div>
+                    <div style="margin-top:20px">
+                        <label><b>配件收入 ( 业务 | 数量 | 收入 | 毛利润)</b></label>
+
+                        <div class="well">
+                            <form name="form" ng-repeat="sale in sales | filter: {categoryID: 6}">
+                                <div style="padding-left: 35%">
+                                    <div class="text-warning"
+                                         ng-show="form.$dirty  && form.$invalid">
+                                        <small class="text-warning"
+                                               ng-show="form.$error.required">
+                                            数量，收入，毛利必须同时输入
+                                        </small>
+                                    </div>
+                                    <div class="text-warning"
+                                         ng-show="form.count.$dirty && form.count.$invalid">
+                                        <small class="text-warning"
+                                               ng-show="form.count.$error.pattern">
+                                            数量必须为正整数
+                                        </small>
+                                    </div>
+                                    <div class="text-warning"
+                                         ng-show="form.amount.$dirty && form.amount.$invalid">
+                                        <small class="text-warning"
+                                               ng-show="form.amount.$error.pattern">
+                                            收入必须为正数
+                                        </small>
+                                    </div>
+                                    <div class="text-warning"
+                                         ng-show="form.margin.$dirty && form.margin.$invalid">
+                                        <small class="text-warning"
+                                               ng-show="form.margin.$error.pattern">
+                                            毛利润必须为数字
+                                        </small>
+                                    </div>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            {{sale.name}}
+                                        </td>
+                                        <td width="15%">
+                                            <input ng-if="sale.journalType == 'Revenue'" type="text"
+                                                   ng-pattern="/^[0-9]*$/"
+                                                   class="input-mini" style="width: 40%" name="count"
+                                                   placeholder="0"
+                                                   ng-model="sale.count" required ng-blur="autoSaveSalesRevenue()">
+                                        </td>
+                                        <td width="25%">
+                                            <input ng-if="sale.journalType == 'Revenue'" type="text"
+                                                   ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
+                                                   ng-change="amountChange(salesSummary, sales, sale)"
+                                                   style="width: 55%;" placeholder="0"
+                                                   ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+
+                                            <input ng-if="sale.journalType == 'Expense'" type="text"
+                                                   ng-pattern="/^((-\d+(\.\d+)?)|(0+(\.0+)?))$/" class="input-mini"
+                                                   name="amount" ng-change="amountChange(salesSummary, sales, sale)"
+                                                   style="width: 55%;" placeholder="0"
+                                                   ng-model="sale.amount" required ng-blur="autoSaveSalesRevenue()">
+                                        </td>
+                                        <td width="25%">
+                                            <input ng-if="sale.journalType == 'Revenue'" type="text"
+                                                   ng-pattern="/^(-?\d+)(\.\d+)?$/" class="input-mini" name="margin"
+                                                   style="width: 55%;" placeholder="0"
+                                                   ng-model="sale.margin" required ng-blur="autoSaveSalesRevenue()">
+                                            <i
+                                                    ng-class="sale.sign"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+
+                            <table style="font-size: 12px; width: 100%">
+                                <tr>
+                                    <td>
+                                        合计
+                                    </td>
+                                    <td width="15%">
+                                    </td>
+                                    <td width="30%" style="text-align: center">
+                                        {{salesSummary[6]}}
+                                    </td>
+                                    <td width="25%">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="span6 ">
+            <div style="margin-top:20px">
+            </div>
+
+        </div>
+    </div>
+</div>

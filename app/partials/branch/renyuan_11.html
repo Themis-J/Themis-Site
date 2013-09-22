@@ -13,7 +13,7 @@
     <div class="row-fluid">
         <div class="span6">
             <div style="margin-top:20px">
-                <div ng-class="{true: '', false: 'hide'}[isWerixiufeeActive]">
+                <div>
                     <label><b>维修部 (标准工时收费 | 有效工时收费 | 技工平均工资)</b></label>
 
                     <div class="well">
@@ -51,11 +51,18 @@
                     </div>
                 </div>
 
-                <div ng-class="{true: '', false: 'hide'}[isWeixiusummaryActive]">
+                <div>
                     <label><b>维修部 - 当月数据</b></label>
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 4}">
+                            <div class="text-warning"
+                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                <small class="text-warning"
+                                       ng-show="form.amount.$error.pattern">
+                                    数据必须为数字
+                                </small>
+                            </div>
                             <fieldset>
                                 <table style="font-size: 12px">
                                     <tr>
@@ -76,42 +83,23 @@
                         </form>
                     </div>
                 </div>
-
-                <div ng-class="{true: '', false: 'hide'}[isWeixiuacclocationActive]">
-                    <label><b>维修部</b></label>
-
-                    <div class="well">
-                        <form name="form" ng-repeat="hrAllocation in hrAllocations | filter: {dept: 4}">
-                            <fieldset>
-                                <table style="font-size: 12px">
-                                    <tr>
-                                        <td width='35%'>
-                                            {{hrAllocation.name}}
-                                        </td>
-                                        <td width="25%">
-                                            <input type="text" class="input-mini" ng-pattern="/^\d+(\.\d+)?$/"
-                                                   style="width: 55%;" placeholder="0"
-                                                   ng-model="hrAllocation.allocation" required
-                                                   ng-blur="autoSaveAllocation()">
-                                            <i
-                                                    ng-class="hrAllocation.sign"></i>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
 
         <div class="span6 ">
             <div style="margin-top:20px">
-                <div ng-class="{true: '', false: 'hide'}[isBanpenfeeActive]">
+                <div>
                     <label><b>钣喷部 (标准工时收费 | 有效工时收费 | 技工平均工资)</b></label>
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeFee in employeeFees | filter: {dept: 6}">
+                            <div class="text-warning"
+                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                <small class="text-warning"
+                                       ng-show="form.amount.$error.pattern">
+                                    数据必须为数字
+                                </small>
+                            </div>
                             <fieldset>
                                 <table style="font-size: 12px">
                                     <tr>
@@ -145,11 +133,18 @@
                     </div>
                 </div>
 
-                <div ng-class="{true: '', false: 'hide'}[isBanpensummaryActive]">
+                <div>
                     <label><b>钣喷部 - 当月数据</b></label>
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 6}">
+                            <div class="text-warning"
+                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                <small class="text-warning"
+                                       ng-show="form.amount.$error.pattern">
+                                    数据必须为数字
+                                </small>
+                            </div>
                             <fieldset>
                                 <table style="font-size: 12px">
                                     <tr>
@@ -163,32 +158,6 @@
                                                    ng-blur="autoSaveFeeSummary()">
                                             <i
                                                     ng-class="employeeSummary.sign"></i>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-
-                <div ng-class="{true: '', false: 'hide'}[isBanpenacclocationActive]">
-                    <label><b>钣喷部</b></label>
-
-                    <div class="well">
-                        <form name="form" ng-repeat="hrAllocation in hrAllocations | filter: {dept: 6}">
-                            <fieldset>
-                                <table style="font-size: 12px">
-                                    <tr>
-                                        <td width='35%'>
-                                            {{hrAllocation.name}}
-                                        </td>
-                                        <td width="25%">
-                                            <input type="text" class="input-mini" ng-pattern="/^\d+(\.\d+)?$/"
-                                                   style="width: 55%;" placeholder="0"
-                                                   ng-model="hrAllocation.allocation" required
-                                                   ng-blur="autoSaveAllocation()">
-                                            <i
-                                                    ng-class="hrAllocation.sign"></i>
                                         </td>
                                     </tr>
                                 </table>

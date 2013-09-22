@@ -2,24 +2,6 @@ angular.module('jingying.controller', [])
     .controller('jingyingCtrl', ['$scope', 'Dealer', 'DealerService','$filter', function ($scope, Dealer, DealerService, $filter) {
         $scope.isDone =  ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
 
-        $scope.isBiandongActive = false;
-        $scope.isXiaoshouActive = false;
-        $scope.isRengongActive = false;
-        $scope.isBangudingActive = false;
-        $scope.isGudingActive = false;
-        $scope.isQitaActive = false;
-
-        if (DealerService.getSelectedDept() != 7) {
-            $scope.isBiandongActive = true;
-            $scope.isXiaoshouActive = true;
-            $scope.isRengongActive = true;
-            $scope.isBangudingActive = true;
-            $scope.isGudingActive = true;
-        }
-        else {
-            $scope.isQitaActive = true;
-        }
-
         $scope.generalSummary = [];
         $scope.generalSales = [];
 

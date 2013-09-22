@@ -1,0 +1,268 @@
+<div ng-controller="jingyingCtrl">
+<div style="height: 30px">
+    <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
+
+    <div class="pull-right">
+        <button ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()"><span> 标记为完成 <i
+                class="icon-hand-up"></i></span></button>
+        <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign"
+                                                              style="color:green;display:inline"></i>已完成</span>
+    </div>
+</div>
+
+<div class="row-fluid">
+<div class="span6">
+    <div style="margin-top:20px">
+        <div>
+            <div style="margin-top:20px">
+                <label><b>变动费用</b></label>
+
+                <div class="well">
+                    <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 1}">
+                        <div class="text-warning"
+                             ng-show="form.amount.$dirty && form.amount.$invalid">
+                            <small class="text-warning"
+                                   ng-show="form.amount.$error.pattern">
+                                收入必须为正数
+                            </small>
+                        </div>
+
+                        <table style="font-size: 12px">
+                            <tr>
+                                <td width="35%">
+                                    {{generalSale.name}}
+                                </td>
+                                <td width="25%">
+                                    <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i
+                                            ng-class="generalSale.sign"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[3]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div style="margin-top:20px">
+                <label><b>人工费用</b></label>
+
+                <div class="well">
+                    <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 3}">
+                        <div class="text-warning"
+                             ng-show="form.amount.$dirty && form.amount.$invalid">
+                            <small class="text-warning"
+                                   ng-show="form.amount.$error.pattern">
+                                收入必须为正数
+                            </small>
+                        </div>
+
+                        <table style="font-size: 12px">
+                            <tr>
+                                <td width="35%">
+                                    {{generalSale.name}}
+                                </td>
+                                <td width="25%">
+                                    <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i
+                                            ng-class="generalSale.sign"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[3]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div style="margin-top:20px">
+                <label><b>固定费用</b></label>
+
+                <div class="well">
+                    <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 5}">
+                        <div class="text-warning"
+                             ng-show="form.amount.$dirty && form.amount.$invalid">
+                            <small class="text-warning"
+                                   ng-show="form.amount.$error.pattern">
+                                收入必须为正数
+                            </small>
+                        </div>
+
+                        <table style="font-size: 12px">
+                            <tr>
+                                <td width="35%">
+                                    {{generalSale.name}}
+                                </td>
+                                <td width="25%">
+                                    <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i
+                                            ng-class="generalSale.sign"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[3]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="span6">
+    <div style="margin-top:20px">
+        <div>
+            <div style="margin-top:20px">
+                <label><b>销售费用</b></label>
+
+                <div class="well">
+                    <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 2}">
+                        <div class="text-warning"
+                             ng-show="form.amount.$dirty && form.amount.$invalid">
+                            <small class="text-warning"
+                                   ng-show="form.amount.$error.pattern">
+                                收入必须为正数
+                            </small>
+                        </div>
+
+                        <table style="font-size: 12px">
+                            <tr>
+                                <td width="35%">
+                                    {{generalSale.name}}
+                                </td>
+                                <td width="25%">
+                                    <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i
+                                            ng-class="generalSale.sign"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[3]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div style="margin-top:20px">
+                <label><b>半固定费用</b></label>
+
+                <div class="well">
+                    <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 4}">
+                        <div class="text-warning"
+                             ng-show="form.amount.$dirty && form.amount.$invalid">
+                            <small class="text-warning"
+                                   ng-show="form.amount.$error.pattern">
+                                收入必须为正数
+                            </small>
+                        </div>
+
+                        <table style="font-size: 12px">
+                            <tr>
+                                <td width="35%">
+                                    {{generalSale.name}}
+                                </td>
+                                <td width="25%">
+                                    <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
+                                           ng-change="amountChange(generalSummary, generalSales, generalSale)"
+                                           style="width: 55%;" placeholder="0"
+                                           ng-model="generalSale.amount" required ng-blur="autoSaveGeneralRevenue()">
+                                    <i
+                                            ng-class="generalSale.sign"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    <table style="font-size: 12px; width: 100%">
+                        <tr>
+                            <td width='35%'>
+                                合计
+                            </td>
+                            <td width="15%">
+                            </td>
+                            <td width="25%">
+                                {{salesSummary[3]}}
+                            </td>
+                            <td width="25%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>

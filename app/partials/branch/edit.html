@@ -1,19 +1,19 @@
 <ng-include src="'partials/branch/header.html'"></ng-include>
 
 <div class="container" style="padding-top:95px">
-<div class="row-fluid">
-<div class="span2">
-    <ng-include src="'partials/branch/nav.html'" onload="bindEvent()"></ng-include>
-</div>
-
-<div class="span9" style="padding-left: 65px">
-    <legend>{{itemName}} <i class="icon-angle-right" ng-show="depat"></i> {{depat}}
-        <div class="pull-right" >
-           <input class="btn btn-info btn-small" id="datepicker"  style="width: 100px">
+    <div class="row-fluid">
+        <div class="span2">
+            <ng-include src="'partials/branch/nav.html'" onload="bindEvent()"></ng-include>
         </div>
-    </legend>
-    <ng-include src="subpage"></ng-include>
-</div>
 
-</div>
+        <div class="span9" style="padding-left: 65px">
+            <legend>{{itemName}} <i class="icon-angle-right" ng-show="depat"></i> {{depat}}
+                <div class="pull-right">
+                    <input class="btn btn-info btn-small" id="datepicker" style="width: 100px">
+                </div>
+            </legend>
+            <ng-include src="subpage"></ng-include>
+        </div>
+
+    </div>
 </div>
