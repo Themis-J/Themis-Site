@@ -2,24 +2,11 @@ angular.module('renyuan.controller', [])
     .controller('renyuanCtrl', ['$scope', 'Dealer', 'DealerService', function ($scope, Dealer, DealerService) {
         $scope.isDone = ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
 
-        $scope.isWerixiufeeActive = false;
-        $scope.isBanpenfeeActive = false;
-        $scope.isWeixiusummaryActive = false;
-        $scope.isBanpensummaryActive = false;
-        $scope.isWeixiuacclocationActive = false;
-        $scope.isBanpenacclocationActive = false;
-
         if (DealerService.getSelectedDept() == 11) {
-            $scope.isWerixiufeeActive = true;
-            $scope.isBanpenfeeActive = true;
-            $scope.isWeixiusummaryActive = true;
-            $scope.isBanpensummaryActive = true;
 
             loadpage1();
         }
         else {
-            $scope.isWeixiuacclocationActive = true;
-            $scope.isBanpenacclocationActive = true;
 
             var allocationSet = [];
             var depts = [4, 6];
