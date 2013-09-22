@@ -1,0 +1,89 @@
+<div ng-controller="renyuanCtrl">
+    <div style="height: 30px">
+        <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
+
+        <div class="pull-right">
+            <button ng-class="{true: 'hide', false: ''}[isDone]" class="btn" type="button" ng-click="toggleMark()">
+                <span> 标记为完成 <i class="icon-hand-up"></i></span></button>
+            <span ng-class="{true: '', false: 'hide'}[isDone]"><i class="icon-check-sign"
+                                                                  style="color:green;display:inline"></i>已完成</span>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <div style="margin-top:20px">
+                <div>
+                    <label><b>维修部</b></label>
+
+                    <div class="well">
+                        <form name="form" ng-repeat="hrAllocation in hrAllocations | filter: {dept: 4}">
+                            <div class="text-warning"
+                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                <small class="text-warning"
+                                       ng-show="form.amount.$error.pattern">
+                                    数据必须为数字
+                                </small>
+                            </div>
+                            <fieldset>
+                                <table style="font-size: 12px">
+                                    <tr>
+                                        <td width='35%'>
+                                            {{hrAllocation.name}}
+                                        </td>
+                                        <td width="25%">
+                                            <input type="text" class="input-mini" ng-pattern="/^\d+(\.\d+)?$/"
+                                                   style="width: 55%;" placeholder="0"
+                                                   ng-model="hrAllocation.allocation" required
+                                                   ng-blur="autoSaveAllocation()">
+                                            <i
+                                                    ng-class="hrAllocation.sign"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="span6 ">
+            <div style="margin-top:20px">
+                <div>
+                    <label><b>钣喷部</b></label>
+
+                    <div class="well">
+                        <form name="form" ng-repeat="hrAllocation in hrAllocations | filter: {dept: 6}">
+                            <div class="text-warning"
+                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                <small class="text-warning"
+                                       ng-show="form.amount.$error.pattern">
+                                    数据必须为数字
+                                </small>
+                            </div>
+                            <fieldset>
+                                <table style="font-size: 12px">
+                                    <tr>
+                                        <td width='35%'>
+                                            {{hrAllocation.name}}
+                                        </td>
+                                        <td width="25%">
+                                            <input type="text" class="input-mini" ng-pattern="/^\d+(\.\d+)?$/"
+                                                   style="width: 55%;" placeholder="0"
+                                                   ng-model="hrAllocation.allocation" required
+                                                   ng-blur="autoSaveAllocation()">
+                                            <i
+                                                    ng-class="hrAllocation.sign"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -2,12 +2,6 @@ angular.module('lirun.controller', [])
     .controller('lirunCtrl', ['$scope', 'Dealer', 'DealerService', '$filter', function ($scope, Dealer, DealerService, $filter) {
         $scope.isDone =  ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
 
-        $scope.isJiaocheActive = false;
-        $scope.isHuocheActive = false;
-        $scope.isQitaJinxiangActive = false;
-        $scope.isFujiaActive = false;
-        $scope.isQitaShouruActive = false;
-
         $scope.vehicleSummary = [];
         $scope.salesSummary = [];
         $scope.generalSummary = [];
@@ -31,9 +25,6 @@ angular.module('lirun.controller', [])
             }
         }
 
-        if (DealerService.getSelectedDept() == 1) {
-            $scope.isJiaocheActive = true;
-            $scope.isHuocheActive = true;
             $scope.vehicleRevenues = [];
 
             var vehicleSet = [];
@@ -66,11 +57,7 @@ angular.module('lirun.controller', [])
                     }
                 );
             });
-        }
 
-        if (DealerService.getSelectedDept() >= 1 && DealerService.getSelectedDept() < 7) {
-            $scope.isFujiaActive = true;
-            $scope.isQitaShouruActive = true;
             $scope.sales = [];
 
             var salesSet = [];
@@ -102,21 +89,18 @@ angular.module('lirun.controller', [])
                     })
             });
 
-        }
 
-        if (DealerService.getSelectedDept() == 7) {
-            $scope.isQitaJinxiangActive = true;
             $scope.generalSales = [];
 
             var generalSet = [];
-            var genetalItems = Dealer.getGeneral({categoryID: 8}, function () {
+            var genetalItems = Dealer.getGeneral({}, function () {
                 $.each(genetalItems.items, function (index, saleItem) {
                     saleItem.sign = "";
                     generalSet[saleItem.id] = saleItem;
                     $scope.generalSummary[saleItem.categoryID] = 0;
                 });
 
-                var generalRevenues = Dealer.getGeneralJournal({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: DealerService.getSelectedDept(), categoryID: 8},
+                var generalRevenues = Dealer.getGeneralJournal({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: DealerService.getSelectedDept()},
                     function () {
                         $.each(generalRevenues.detail, function (index, saleRevenue) {
                             var oneSale = generalSet[saleRevenue.itemID];
@@ -134,7 +118,6 @@ angular.module('lirun.controller', [])
                         });
                     })
             });
-        }
 
         $scope.autoSaveVehivleRevenue = function(proxy)
         {

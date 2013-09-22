@@ -4,7 +4,7 @@ angular.module('branchApp.controllers', []).
   controller('editCtrl', ['$scope','$route','$location','DealerService','Dealer', function($scope,$route,$location, DealerService, Dealer) {
         $scope.items = ['lirun','jingying', 'sunyi', 'zhangkuan', 'kucun', 'renyuan', 'shui','welcome'];
         $scope.itemNames = ['收入与毛利润','经营费用', '非经营性损益', '应收账款', '库存', '人员管理', '所得税', "欢迎使用"];
-        $scope.deptmts = ['','新车销售部','二手车部','租赁事业部','维修部','配件部','钣喷部','其他部门',"新车","二手车","备件与精品", "工时", "经销商人员"];
+        $scope.deptmts = ['','新车销售部','二手车部','租赁事业部','维修部','配件部','钣喷部','其他部门',"新车","二手车","备件与精品", "工时", "经销商人员", "员工分红"];
         $scope.doneMenus = [];
 
         var datepicker = $("#datepicker").datepicker({
@@ -12,6 +12,7 @@ angular.module('branchApp.controllers', []).
             changeYear: true,
             showButtonPanel: false,
             dateFormat: 'yy年 mm月',
+            defaultDate:  new Date(DealerService.getSelectedYear(), DealerService.getSelectedMonth(), 1),
             currentText: '本月',
             closeText: '关闭',
             prevText: '<上月',
@@ -48,7 +49,7 @@ angular.module('branchApp.controllers', []).
             DealerService.setSelectedDept(deptmtId);
             DealerService.setSelectedMenu(menuId);
 
-            $scope.subpage = 'partials/branch/' + $scope.items[itemId] + '.html';
+            $scope.subpage = 'partials/branch/' + $scope.items[itemId] + '_' + deptmtId + '.html';
             $scope.$apply(function(){
             });
         }
