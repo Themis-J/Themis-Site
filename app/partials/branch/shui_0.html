@@ -25,14 +25,14 @@
                                     <td width="25%">
                                         <form name="form">
                                             <div class="text-warning"
-                                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                                 ng-show="form.tax.$dirty && form.tax.$invalid">
                                                 <small class="text-warning"
-                                                       ng-show="form.amount.$error.pattern">
+                                                       ng-show="form.tax.$error.pattern">
                                                     税费必须为正数
                                                 </small>
                                             </div>
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"    name="tax"
                                                    ng-model="tax" required ng-blur="autoSaveTax()">
                                             <i ng-class="sign"></i>
                                         </form>

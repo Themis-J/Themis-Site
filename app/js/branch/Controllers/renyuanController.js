@@ -3,13 +3,40 @@ angular.module('renyuan.controller', [])
         $scope.isDone = ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
 
         if (DealerService.getSelectedDept() == 11) {
+            $scope.employeeFees = [];
+            $scope.employeeFeeSummary = [];
 
             loadpage1();
         }
         else {
+            $scope.hrAllocations = [];
+            $scope.itemSummary = [];
+
+            $scope.deptMap = [
+                {name: '--请选择待输入部门--', id: 0},
+                {name: '新车销售部', id: 1},
+                {name: '二手车部', id: 2},
+                {name: '租恁事业部', id: 3},
+                {name: '维修部', id: 4},
+                {name: '备件部', id: 5},
+                {name: '钣喷部', id: 6},
+                {name: '其它部', id: 7}
+            ];
+            $scope.depart = $scope.deptMap[0];
+
+            $scope.deptSummary = [
+                {name: '新车销售部', value: 1, sum: 0},
+                {name: '二手车部', value: 2, sum: 0},
+                {name: '租恁事业部', value: 3, sum: 0},
+                {name: '维修部', value: 4, sum: 0},
+                {name: '备件部', value: 5, sum: 0},
+                {name: '钣喷部', value: 6, sum: 0},
+                {name: '其它部', value: 7, sum: 0}
+            ];
 
             var allocationSet = [];
-            var depts = [4, 6];
+            var depts = [1, 2, 3, 4, 5, 6, 7];
+
             var hrItems = Dealer.getHR({}, function () {
                 $.each(hrItems.items, function (index, saleItem) {
                     $.each(depts, function (index, dept) {
@@ -18,20 +45,20 @@ angular.module('renyuan.controller', [])
                         }
                         var oneItem = {};
                         $.extend(oneItem, saleItem);
-                        oneItem.active = false;
                         oneItem.dept = dept;
                         allocationSet[dept][saleItem.id] = oneItem;
                     });
+
+                    var oneSummary = {};
+                    oneSummary.id = saleItem.id;
+                    oneSummary.name = saleItem.name;
+                    oneSummary.value = 0;
+                    $scope.itemSummary.push(oneSummary);
                 });
 
                 loadHrAllocation(allocationSet, depts, 0);
             });
         }
-
-        $scope.employeeFees = [];
-        $scope.employeeFeeSummary = [];
-        $scope.hrAllocations = [];
-
         function loadpage1() {
             var salesSet = [];
             var depts = [4, 6];
@@ -127,6 +154,32 @@ angular.module('renyuan.controller', [])
                     var currentDate = new Date();
                     $scope.autoSaveTime = "上次自动保存于" + currentDate.getHours() + "点" + currentDate.getMinutes() + "分" + currentDate.getSeconds() + "秒";
                     $scope.autoSaveClass = "text-success";
+
+
+                    var itemSum = 0;
+                    var deptSum = 0;
+                    $.each($scope.hrAllocations, function(itemIndex, hrAllocation){
+                        if (this.hrAllocation.id === hrAllocation.id)
+                        {
+                            itemSum =  itemSum + hrAllocation.allocation;
+                        }
+                        if (this.hrAllocation.dept === hrAllocation.dept)
+                        {
+                            deptSum = deptSum +  hrAllocation.allocation;
+                        }
+                    });
+                    $.each($scope.itemSummary, function(itemIndex, oneSummary){
+                         if (oneSummary.id === this.hrAllocation.id)
+                         {
+                             oneSummary.value =  itemSum;
+                         }
+                    });
+                    $.each($scope.deptSummary, function(deptIndex, oneSummary){
+                        if (this.hrAllocation.dept === oneSummary.value)
+                        {
+                            oneSummary.sum = deptSum;
+                        }
+                    });
                 };
 
                 var failed = function () {
@@ -220,27 +273,41 @@ angular.module('renyuan.controller', [])
                 });
         }
 
-        function loadHrAllocation(allocationSet, depts, index) {
-            if (index >= depts.length) {
+        function loadHrAllocation(allocationSet, depts, deIndex) {
+            if (deIndex >= depts.length) {
                 return;
             }
-            var saleRevenues = Dealer.getHRAllocation({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: depts[index]},
+            var saleRevenues = Dealer.getHRAllocation({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: depts[deIndex]},
                 function () {
                     $.each(saleRevenues.detail, function (index, saleRevenue) {
                         var oneSale = allocationSet[saleRevenue.departmentID][saleRevenue.itemID];
                         oneSale.allocation = saleRevenue.allocation;
+
+                        $.each($scope.itemSummary, function(itemIndex, oneSummary){
+                              if (saleRevenue && saleRevenue.itemID === oneSummary.id)
+                              {
+                                  oneSummary.value =  oneSummary.value + saleRevenue.allocation;
+                              }
+                        });
+                        $.each($scope.deptSummary, function(deptIndex, oneSummary){
+                              if (saleRevenue && saleRevenue.departmentID === oneSummary.value)
+                              {
+                                  oneSummary.sum = oneSummary.sum + oneSummary.allocation;
+                              }
+                        });
                     });
 
                     $.each(allocationSet, function (index, saleInDept) {
                         if (saleInDept) {
                             $.each(saleInDept, function (index, sale) {
-                                if (sale && sale.id) {
+                                if (sale && (sale.dept === depts[deIndex])) {
                                     $scope.hrAllocations.push(sale);
                                 }
                             })
                         }
                     });
-                    loadHrAllocation(allocationSet, depts, index + 1);
+
+                    loadHrAllocation(allocationSet, depts, deIndex + 1);
                 });
         }
 
@@ -257,6 +324,10 @@ angular.module('renyuan.controller', [])
                 if (!$scope.isDone) {
                     $scope.$parent.$parent.doneMenus.push(parseInt(DealerService.getSelectedMenu()));
                     navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+
+                    if ($('#collapsSix').find('i.icon-check-sign').size() == 2) {
+                        $('#six').append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+                    }
                 }
                 else {
                     $scope.$parent.$parent.doneMenus = jQuery.grep($scope.$parent.$parent.doneMenus, function (value) {

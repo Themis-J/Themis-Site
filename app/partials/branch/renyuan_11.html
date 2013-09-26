@@ -18,6 +18,36 @@
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeFee in employeeFees | filter: {dept: 4}">
+                            <div style="padding-left: 35%">
+                                <div class="text-warning"
+                                     ng-show="form.$dirty  && form.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.$error.required">
+                                        标准工时收费，有效工时收费，技工平均工资必须同时输入
+                                    </small>
+                                </div>
+                                <div class="text-warning"
+                                     ng-show="form.amount.$dirty && form.amount.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.amount.$error.pattern">
+                                        标准工时收费必须为正整数
+                                    </small>
+                                </div>
+                                <div class="text-warning"
+                                     ng-show="form.amount1.$dirty && form.amount1.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.amount1.$error.pattern">
+                                        有效工时收费必须为正整数
+                                    </small>
+                                </div>
+                                <div class="text-warning"
+                                     ng-show="form.amount2.$dirty && form.amount2.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.amount2.$error.pattern">
+                                        技工平均工资必须为正整数
+                                    </small>
+                                </div>
+                            </div>
                             <fieldset>
                                 <table style="font-size: 12px">
                                     <tr>
@@ -26,19 +56,19 @@
                                         </td>
                                         <td width="15%">
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 40%" placeholder="0"
+                                                   style="width: 40%" placeholder="0"   name="amount1"
                                                    ng-model="employeeFee.data[0].amount" required
                                                    ng-blur="autoSaveFee()">
                                         </td>
                                         <td width="25%">
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"      name="amount2"
                                                    ng-model="employeeFee.data[1].amount" required
                                                    ng-blur="autoSaveFee()">
                                         </td>
                                         <td width="25%">
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"       name="amount3"
                                                    ng-model="employeeFee.data[2].amount" required
                                                    ng-blur="autoSaveFee()">
                                             <i
@@ -56,13 +86,6 @@
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 4}">
-                            <div class="text-warning"
-                                 ng-show="form.amount.$dirty && form.amount.$invalid">
-                                <small class="text-warning"
-                                       ng-show="form.amount.$error.pattern">
-                                    数据必须为数字
-                                </small>
-                            </div>
                             <fieldset>
                                 <table style="font-size: 12px">
                                     <tr>
@@ -70,8 +93,15 @@
                                             {{employeeSummary.name}}
                                         </td>
                                         <td width="25%">
+                                            <div class="text-warning"
+                                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                                <small class="text-warning"
+                                                       ng-show="form.amount.$error.pattern">
+                                                    数据必须为数字
+                                                </small>
+                                            </div>
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"   name="amount"
                                                    ng-model="employeeSummary.amount" required
                                                    ng-blur="autoSaveFeeSummary()">
                                             <i
@@ -93,12 +123,35 @@
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeFee in employeeFees | filter: {dept: 6}">
-                            <div class="text-warning"
-                                 ng-show="form.amount.$dirty && form.amount.$invalid">
-                                <small class="text-warning"
-                                       ng-show="form.amount.$error.pattern">
-                                    数据必须为数字
-                                </small>
+                            <div style="padding-left: 35%">
+                                <div class="text-warning"
+                                     ng-show="form.$dirty  && form.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.$error.required">
+                                        标准工时收费，有效工时收费，技工平均工资必须同时输入
+                                    </small>
+                                </div>
+                                <div class="text-warning"
+                                     ng-show="form.amount.$dirty && form.amount.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.amount.$error.pattern">
+                                        标准工时收费必须为正整数
+                                    </small>
+                                </div>
+                                <div class="text-warning"
+                                     ng-show="form.amount1.$dirty && form.amount1.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.amount1.$error.pattern">
+                                        有效工时收费必须为正整数
+                                    </small>
+                                </div>
+                                <div class="text-warning"
+                                     ng-show="form.amount2.$dirty && form.amount2.$invalid">
+                                    <small class="text-warning"
+                                           ng-show="form.amount2.$error.pattern">
+                                        技工平均工资必须为正整数
+                                    </small>
+                                </div>
                             </div>
                             <fieldset>
                                 <table style="font-size: 12px">
@@ -108,19 +161,19 @@
                                         </td>
                                         <td width="15%">
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 40%" placeholder="0"
+                                                   style="width: 40%" placeholder="0"   name="amount"
                                                    ng-model="employeeFee.data[0].amount" required
                                                    ng-blur="autoSaveFee()">
                                         </td>
                                         <td width="25%">
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"    name="amount1"
                                                    ng-model="employeeFee.data[1].amount" required
                                                    ng-blur="autoSaveFee()">
                                         </td>
                                         <td width="25%">
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"    name="amount2"
                                                    ng-model="employeeFee.data[2].amount" required
                                                    ng-blur="autoSaveFee()">
                                             <i
@@ -138,13 +191,6 @@
 
                     <div class="well">
                         <form name="form" ng-repeat="employeeSummary in employeeFeeSummary | filter: {dept: 6}">
-                            <div class="text-warning"
-                                 ng-show="form.amount.$dirty && form.amount.$invalid">
-                                <small class="text-warning"
-                                       ng-show="form.amount.$error.pattern">
-                                    数据必须为数字
-                                </small>
-                            </div>
                             <fieldset>
                                 <table style="font-size: 12px">
                                     <tr>
@@ -152,8 +198,15 @@
                                             {{employeeSummary.name}}
                                         </td>
                                         <td width="25%">
+                                            <div class="text-warning"
+                                                 ng-show="form.amount.$dirty && form.amount.$invalid">
+                                                <small class="text-warning"
+                                                       ng-show="form.amount.$error.pattern">
+                                                    数据必须为数字
+                                                </small>
+                                            </div>
                                             <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini"
-                                                   style="width: 55%;" placeholder="0"
+                                                   style="width: 55%;" placeholder="0"     name="amount"
                                                    ng-model="employeeSummary.amount" required
                                                    ng-blur="autoSaveFeeSummary()">
                                             <i
