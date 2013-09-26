@@ -1,8 +1,8 @@
 angular.module('kucun.controller', [])
-    .controller('kucunCtrl', ['$scope', 'Dealer', 'DealerService', '$filter',  function ($scope, Dealer, DealerService, $filter) {
-        $scope.isDone =  ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
+    .controller('kucunCtrl', ['$scope', 'Dealer', 'DealerService', '$filter', function ($scope, Dealer, DealerService, $filter) {
+        $scope.isDone = ($scope.$parent.$parent.doneMenus.indexOf(parseInt(DealerService.getSelectedMenu())) !== -1);
 
-        $scope.accountReceivables= [];
+        $scope.accountReceivables = [];
         var salesSet = [];
         var accountItems = Dealer.getInventory({}, function () {
             $.each(accountItems.items, function (index, accountItem) {
@@ -46,59 +46,58 @@ angular.module('kucun.controller', [])
                 })
         });
 
-        $scope.autoSaveAccountReceivables = function()
-        {
-            if (this.form.$invalid)
-            {
-                 return;
+        $scope.autoSaveAccountReceivables = function () {
+            if (this.form.$invalid) {
+                return;
             }
             var postData = {};
             postData.dealerID = DealerService.getDealerId();
             postData.departmentID = DealerService.getSelectedDept();
-            postData.validDate =  DealerService.getValidDate();
-            postData.updateBy =  DealerService.getUserName();
+            postData.validDate = DealerService.getValidDate();
+            postData.updateBy = DealerService.getUserName();
             postData.detail = [];
             postData.detail.push({
                 itemID: this.accountInRange.id,
-                amount:  this.accountInRange.amount,
+                amount: this.accountInRange.amount,
                 durationID: this.accountInRange.durationID
             });
 
-            var success = function(){
+            var success = function () {
                 this.accountInRange.sign = "icon-check-sign green";
                 var currentDate = new Date();
-                $scope.autoSaveTime =  "上次自动保存于"+currentDate.getHours()+"点"+currentDate.getMinutes()+"分"+currentDate.getSeconds()+"秒";
+                $scope.autoSaveTime = "上次自动保存于" + currentDate.getHours() + "点" + currentDate.getMinutes() + "分" + currentDate.getSeconds() + "秒";
                 $scope.autoSaveClass = "text-success";
             };
 
-            var failed = function()
-            {
+            var failed = function () {
                 this.accountInRange.sign = "icon-remove-sign red";
-                $scope.autoSaveTime =  "自动保存失败";
+                $scope.autoSaveTime = "自动保存失败";
                 $scope.autoSaveClass = "text-error";
             }
 
-            Dealer.saveInventoryDuration({},postData, $.proxy(success, this), $.proxy(failed, this));
+            Dealer.saveInventoryDuration({}, postData, $.proxy(success, this), $.proxy(failed, this));
         }
 
         $scope.toggleMark = function () {
             var postData = {};
             postData.dealerID = DealerService.getDealerId();
-            postData.itemID =  DealerService.getSelectedMenu();
-            postData.validDate =  DealerService.getValidDate();
-            postData.updateBy =  DealerService.getUserName();
+            postData.itemID = DealerService.getSelectedMenu();
+            postData.validDate = DealerService.getValidDate();
+            postData.updateBy = DealerService.getUserName();
 
-            Dealer.saveStatus({}, postData,function(){
+            Dealer.saveStatus({}, postData, function () {
                 var navLink = $("#" + DealerService.getSelectedMenu());
                 navLink.children().remove();
-                if (!$scope.isDone)
-                {
+                if (!$scope.isDone) {
                     $scope.$parent.$parent.doneMenus.push(parseInt(DealerService.getSelectedMenu()));
                     navLink.append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+
+                    if ($('#collapsFive').find('i.icon-check-sign').size() == 3) {
+                        $('#five').append($('<i class="icon-check-sign" style="color:green;display:inline"></i>'));
+                    }
                 }
-                else
-                {
-                    $scope.$parent.$parent.doneMenus = jQuery.grep($scope.$parent.$parent.doneMenus, function(value) {
+                else {
+                    $scope.$parent.$parent.doneMenus = jQuery.grep($scope.$parent.$parent.doneMenus, function (value) {
                         return value != parseInt(DealerService.getSelectedMenu());
                     });
                 }

@@ -2,8 +2,8 @@
     <div class="accordion affix" id="accordion2">
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"
-                   onclick="return false;" style="text-decoration: none">
+                <a id="one" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');$(this).children('i.icon-chevron-right').toggleClass('icon-chevron-down');return false;" style="text-decoration: none">
                     收入与毛利润 <i class="icon-chevron-right pull-right"></i>
                 </a>
             </div>
@@ -13,25 +13,25 @@
                         <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
                             class="nav nav-pills nav-stacked">
                             <li>
-                                <a id="10" href="#" onclick="return false;" ng-click="goto(0,1, 10)">新车销售部 </a>
+                                <a id="10" href="#" onclick="return false;" ng-click="goto(0,1,'新车销售部', 10)">新车销售部 </a>
                             </li>
                             <li>
-                                <a id="11" href="#" onclick="return false;" ng-click="goto(0,2, 11)">二手车部 </a>
+                                <a id="11" href="#" onclick="return false;" ng-click="goto(0,2, '二手车部', 11)">二手车部 </a>
                             </li>
                             <li>
-                                <a id="12" href="#" onclick="return false;" ng-click="goto(0,3, 12)">租赁事业部 </a>
+                                <a id="12" href="#" onclick="return false;" ng-click="goto(0,3, '租赁事业部', 12)">租赁事业部 </a>
                             </li>
                             <li>
-                                <a id="13" href="#" onclick="return false;" ng-click="goto(0,4, 13)">维修部 </a>
+                                <a id="13" href="#" onclick="return false;" ng-click="goto(0,4,'维修部', 13)">维修部 </a>
                             </li>
                             <li>
-                                <a id="14" href="#" onclick="return false;" ng-click="goto(0,5, 14)">配件部 </a>
+                                <a id="14" href="#" onclick="return false;" ng-click="goto(0,5, '配件部',14)">配件部 </a>
                             </li>
                             <li>
-                                <a id="15" href="#" onclick="return false;" ng-click="goto(0,6, 15)">钣喷部 </a>
+                                <a id="15" href="#" onclick="return false;" ng-click="goto(0,6, '钣喷部',15)">钣喷部 </a>
                             </li>
                             <li>
-                                <a id="17" href="#" onclick="return false;" ng-click="goto(0,7, 17)">其他部门 </a>
+                                <a id="17" href="#" onclick="return false;" ng-click="goto(0,7,'非销售类返利', 17)">非销售类返利 </a>
                             </li>
                         </ul>
                     </div>
@@ -41,8 +41,8 @@
 
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"
-                   onclick="return false;" style="text-decoration: none">
+                <a id="two" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');$(this).children('i.icon-chevron-right').toggleClass('icon-chevron-down');return false;" style="text-decoration: none">
                     经营费用 <i class="icon-chevron-right  pull-right"></i>
                 </a>
             </div>
@@ -52,25 +52,28 @@
                         <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
                             class="nav nav-pills nav-stacked">
                             <li>
-                                <a id="18" href="#" onclick="return false;" ng-click="goto(1,1,18)">新车销售部 </a>
+                                <a id="18" href="#" onclick="return false;" ng-click="goto(1,1,'新车销售部', 18)">新车销售部 </a>
                             </li>
                             <li>
-                                <a id="19" href="#" onclick="return false;" ng-click="goto(1,2,19)">二手车部 </a>
+                                <a id="19" href="#" onclick="return false;" ng-click="goto(1,2,'二手车部',19)">二手车部 </a>
                             </li>
                             <li>
-                                <a id="20" href="#" onclick="return false;" ng-click="goto(1,3,20)">租赁事业部 </a>
+                                <a id="20" href="#" onclick="return false;" ng-click="goto(1,3,'租赁事业部',20)">租赁事业部 </a>
                             </li>
                             <li>
-                                <a id="21" href="#" onclick="return false;" ng-click="goto(1,4,21)">维修部 </a>
+                                <a id="21" href="#" onclick="return false;" ng-click="goto(1,4,'维修部',21)">维修部 </a>
                             </li>
                             <li>
-                                <a id="22" href="#" onclick="return false;" ng-click="goto(1,5,22)">配件部 </a>
+                                <a id="22" href="#" onclick="return false;" ng-click="goto(1,5,'配件部',22)">配件部 </a>
                             </li>
                             <li>
-                                <a id="23" href="#" onclick="return false;" ng-click="goto(1,6,23)">钣喷部 </a>
+                                <a id="23" href="#" onclick="return false;" ng-click="goto(1,6,'钣喷部',23)">钣喷部 </a>
                             </li>
                             <li>
-                                <a id="25" href="#" onclick="return false;" ng-click="goto(1,7,25)">其他部门 </a>
+                                <a id="24" href="#" onclick="return false;" ng-click="goto(1,7,'其他部门',24)">其他部门 </a>
+                            </li>
+                            <li>
+                                <a id="25" href="#" onclick="return false;" ng-click="goto(1,13,'员工分红',25)">员工分红 </a>
                             </li>
                         </ul>
                     </div>
@@ -80,50 +83,26 @@
 
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsThree"
-                   onclick="return false;" style="text-decoration: none">
-                    非经营性损益 <i class="icon-chevron-right  pull-right"></i>
+                <a  id="5" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"     ng-click="goto(2,0,'',5)"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');return false;" style="text-decoration: none">
+                    非经营性损益
                 </a>
             </div>
-            <div id="collapsThree" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div style="margin-left:30px">
-                        <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
-                            class="nav nav-pills nav-stacked">
-                            <li>
-                                <a id="5" href="#" onclick="return false;" ng-click="goto(2,0,5)">输入 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsFour"
-                   onclick="return false;" style="text-decoration: none">
-                    应收账款 <i class="icon-chevron-right  pull-right"></i>
+                <a  id="6" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsFour"    ng-click="goto(3,0,'',6)"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');return false;" style="text-decoration: none">
+                    应收账款
                 </a>
             </div>
-            <div id="collapsFour" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div style="margin-left:30px">
-                        <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
-                            class="nav nav-pills nav-stacked">
-                            <li>
-                                <a id="6" href="#" onclick="return false;" ng-click="goto(3,0,6)">输入 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsFive"
-                   onclick="return false;" style="text-decoration: none">
+                <a id="five" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsFive"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');$(this).children('i.icon-chevron-right').toggleClass('icon-chevron-down');return false;" style="text-decoration: none">
                     库存 <i class="icon-chevron-right  pull-right"></i>
                 </a>
             </div>
@@ -133,13 +112,13 @@
                         <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
                             class="nav nav-pills nav-stacked">
                             <li>
-                                <a id="26" href="#" onclick="return false;" ng-click="goto(4,1,26)">新车销售部 </a>
+                                <a id="26" href="#" onclick="return false;" ng-click="goto(4,1,'新车销售部',26)">新车销售部 </a>
                             </li>
                             <li>
-                                <a id="27" href="#" onclick="return false;" ng-click="goto(4,2,27)">二手车部 </a>
+                                <a id="27" href="#" onclick="return false;" ng-click="goto(4,2,'二手车部',27)">二手车部 </a>
                             </li>
                             <li>
-                                <a id="28" href="#" onclick="return false;" ng-click="goto(4,5,28)">配件部 </a>
+                                <a id="28" href="#" onclick="return false;" ng-click="goto(4,5,'配件部',28)">配件部 </a>
                             </li>
                         </ul>
                     </div>
@@ -149,8 +128,8 @@
 
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsSix"
-                   onclick="return false;" style="text-decoration: none">
+                <a id="six" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsSix"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');$(this).children('i.icon-chevron-right').toggleClass('icon-chevron-down');return false;" style="text-decoration: none">
                     人员管理 <i class="icon-chevron-right  pull-right"></i>
                 </a>
             </div>
@@ -160,10 +139,10 @@
                         <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
                             class="nav nav-pills nav-stacked">
                             <li>
-                                <a id="29" href="#" onclick="return false;" ng-click="goto(5,11,29)">工时 </a>
+                                <a id="29" href="#" onclick="return false;" ng-click="goto(5,11,'工时',29)">工时 </a>
                             </li>
                             <li>
-                                <a id="30" href="#" onclick="return false;" ng-click="goto(5,12,30)">经销商人员 </a>
+                                <a id="30" href="#" onclick="return false;" ng-click="goto(5,12,'经销商人员',30)">经销商人员 </a>
                             </li>
                         </ul>
                     </div>
@@ -173,22 +152,10 @@
 
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsSeven"
-                   onclick="return false;" style="text-decoration: none">
-                    所得税 <i class="icon-chevron-right  pull-right"></i>
+                <a id="9" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsSeven"    ng-click="goto(6,0,'',9)"
+                   onclick="$('i.icon-chevron-down').removeClass('icon-chevron-down');return false;" style="text-decoration: none">
+                    所得税
                 </a>
-            </div>
-            <div id="collapsSeven" class="accordion-body collapse">
-                <div class="accordion-inner">
-                    <div style="margin-left:30px">
-                        <ul style="list-style:none;margin-bottom: 0px;font-size: 12px"
-                            class="nav nav-pills nav-stacked">
-                            <li>
-                                <a id="9" href="#" onclick="return false;" ng-click="goto(6,0,9)">输入 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
