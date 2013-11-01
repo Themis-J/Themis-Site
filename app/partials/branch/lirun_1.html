@@ -51,7 +51,7 @@
                     <table style="font-size: 12px">
                         <tr>
                             <td width='35%'>
-                                {{vehivleRevenue.name}}
+                                <label>{{vehivleRevenue.name}}</label>
                             </td>
                             <td width="15%">
                                 <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
@@ -135,7 +135,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    {{sale.name}}
+                                    <label class="hasTooltip">{{sale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="sale.tooltip" ></div>
                                 </td>
                                 <td width="15%">
                                     <input ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^[0-9]*$/"
@@ -229,7 +230,7 @@
                     <table style="font-size: 12px">
                         <tr>
                             <td width="35%">
-                                {{vehivleRevenue.name}}
+                                <label>{{vehivleRevenue.name}}</label>
                             </td>
                             <td width="15%">
                                 <input type="text" ng-pattern="/^[0-9]*$/" class="input-mini" style="width: 40%"
@@ -313,7 +314,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    {{sale.name}}
+                                    <label class="hasTooltip">{{sale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="sale.tooltip" ></div>
                                 </td>
                                 <td width="15%">
                                     <input ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^[0-9]*$/"

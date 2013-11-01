@@ -16,13 +16,14 @@
 <div style="margin-top:20px">
 <div ng-repeat="accountReceivable in accountReceivables | filter:{id:1}">
     <div>
-        <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
         <div class="well">
             <table style="font-size: 12px">
                 <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                     <td width="35%">
-                        {{accountInRange.durationDesc}}
+                        <label>{{accountInRange.durationDesc}}</label>
                     </td>
                     <td width="25%">
                         <form name="form">
@@ -58,13 +59,14 @@
 
 <div ng-repeat="accountReceivable in accountReceivables | filter:{id:2}">
     <div>
-        <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <label  class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
         <div class="well">
             <table style="font-size: 12px">
                 <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                     <td width="35%">
-                        {{accountInRange.durationDesc}}
+                        <label>{{accountInRange.durationDesc}}</label>
                     </td>
                     <td width="25%">
                         <form name="form">
@@ -100,13 +102,14 @@
 
 <div ng-repeat="accountReceivable in accountReceivables | filter:{id:3}">
     <div>
-        <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
         <div class="well">
             <table style="font-size: 12px">
                 <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                     <td width="35%">
-                        {{accountInRange.durationDesc}}
+                        <label>{{accountInRange.durationDesc}}</label>
                     </td>
                     <td width="25%">
                         <form name="form">
@@ -142,13 +145,14 @@
 
 <div ng-repeat="accountReceivable in accountReceivables | filter:{id:4}">
     <div>
-        <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+        <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
         <div class="well">
             <table style="font-size: 12px">
                 <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                     <td width="35%">
-                        {{accountInRange.durationDesc}}
+                        <label>{{accountInRange.durationDesc}}</label>
                     </td>
                     <td width="25%">
                         <form name="form">
@@ -188,13 +192,14 @@
     <div style="margin-top:20px">
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:5}">
             <div>
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
                 <div class="well">
                     <table style="font-size: 12px">
                         <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                             <td width="35%">
-                                {{accountInRange.durationDesc}}
+                                <label>{{accountInRange.durationDesc}}</label>
                             </td>
                             <td width="25%">
                                 <form name="form">
@@ -231,13 +236,14 @@
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:6}">
             <div>
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
                 <div class="well">
                     <table style="font-size: 12px">
                         <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                             <td width="35%">
-                                {{accountInRange.durationDesc}}
+                                <label>{{accountInRange.durationDesc}}</label>
                             </td>
                             <td width="25%">
                                 <form name="form">
@@ -274,13 +280,14 @@
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:7}">
             <div>
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
                 <div class="well">
                     <table style="font-size: 12px">
                         <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                             <td width="35%">
-                                {{accountInRange.durationDesc}}
+                                <label>{{accountInRange.durationDesc}}</label>
                             </td>
                             <td width="25%">
                                 <form name="form">
@@ -317,13 +324,14 @@
 
         <div ng-repeat="accountReceivable in accountReceivables | filter:{id:8}">
             <div>
-                <label><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <label class="hasTooltip"><b>{{accountReceivable.name}} (账龄|金额)</b></label>
+                <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
                 <div class="well">
                     <table style="font-size: 12px">
                         <tr ng-repeat="accountInRange in accountReceivable.data | filter:{durationDesc: '天'}">
                             <td width="35%">
-                                {{accountInRange.durationDesc}}
+                                <label>{{accountInRange.durationDesc}}</label>
                             </td>
                             <td width="25%">
                                 <form name="form">

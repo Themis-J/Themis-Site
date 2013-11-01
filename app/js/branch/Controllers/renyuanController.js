@@ -139,6 +139,34 @@ angular.module('renyuan.controller', [])
 
         $scope.autoSaveAllocation = function () {
             if (!this.form.$invalid) {
+
+                var allocId =  this.hrAllocation.id;
+                var allocDept = this.hrAllocation.dept;
+                var itemSum = 0;
+                var deptSum = 0;
+                $.each($scope.hrAllocations, function(itemIndex, oneAllocation){
+                    if (allocId === oneAllocation.id && !isNaN(oneAllocation.allocation))
+                    {
+                        itemSum =  itemSum +  parseInt(oneAllocation.allocation);
+                    }
+                    if (allocDept === oneAllocation.dept && !isNaN(oneAllocation.allocation))
+                    {
+                        deptSum = deptSum +  parseInt(oneAllocation.allocation);
+                    }
+                });
+                $.each($scope.itemSummary, function(itemIndex, oneSummary){
+                    if (oneSummary.id === allocId)
+                    {
+                        oneSummary.value =  itemSum;
+                    }
+                });
+                $.each($scope.deptSummary, function(deptIndex, oneSummary){
+                    if (allocDept === oneSummary.value)
+                    {
+                        oneSummary.sum = deptSum;
+                    }
+                });
+
                 var postData = {};
                 postData.dealerID = DealerService.getDealerId();
                 postData.departmentID = this.hrAllocation.dept;
@@ -155,31 +183,6 @@ angular.module('renyuan.controller', [])
                     $scope.autoSaveTime = "上次自动保存于" + currentDate.getHours() + "点" + currentDate.getMinutes() + "分" + currentDate.getSeconds() + "秒";
                     $scope.autoSaveClass = "text-success";
 
-
-                    var itemSum = 0;
-                    var deptSum = 0;
-                    $.each($scope.hrAllocations, function(itemIndex, hrAllocation){
-                        if (this.hrAllocation.id === hrAllocation.id)
-                        {
-                            itemSum =  itemSum + hrAllocation.allocation;
-                        }
-                        if (this.hrAllocation.dept === hrAllocation.dept)
-                        {
-                            deptSum = deptSum +  hrAllocation.allocation;
-                        }
-                    });
-                    $.each($scope.itemSummary, function(itemIndex, oneSummary){
-                         if (oneSummary.id === this.hrAllocation.id)
-                         {
-                             oneSummary.value =  itemSum;
-                         }
-                    });
-                    $.each($scope.deptSummary, function(deptIndex, oneSummary){
-                        if (this.hrAllocation.dept === oneSummary.value)
-                        {
-                            oneSummary.sum = deptSum;
-                        }
-                    });
                 };
 
                 var failed = function () {
@@ -224,6 +227,27 @@ angular.module('renyuan.controller', [])
 
         function loadFees(salesSet, depts, index) {
             if (index >= depts.length) {
+
+                $scope.$apply();
+
+                $('.hasTooltip').each(function () {
+                    $(this).qtip({
+                        content: {
+                            text: $(this).next('div')
+                        },
+                        hide: {
+                            event: 'unfocus'
+                        },
+                        position: {
+                            at: 'bottom left',
+                            target: $(this)
+                        },
+                        style: {
+                            def: false,
+                            classes: 'tip qtip-rounded qtip-bootstrap'
+                        }
+                    });
+                });
                 return;
             }
             var saleRevenues = Dealer.getEmployeeFee({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: depts[index]},
@@ -275,6 +299,44 @@ angular.module('renyuan.controller', [])
 
         function loadHrAllocation(allocationSet, depts, deIndex) {
             if (deIndex >= depts.length) {
+                $.each($scope.hrAllocations, function(index, alloc){
+                    if (!isNaN(alloc.allocation))
+                    {
+                        $.each($scope.itemSummary, function(itemIndex, oneSummary){
+                            if (alloc && alloc.id === oneSummary.id)
+                            {
+                                oneSummary.value =  oneSummary.value + parseInt(alloc.allocation);
+                            }
+                        });
+                        $.each($scope.deptSummary, function(deptIndex, oneSummary){
+                            if (alloc && alloc.dept === oneSummary.value)
+                            {
+                                oneSummary.sum = oneSummary.sum + parseInt(alloc.allocation);
+                            }
+                        });
+                    }
+                });
+
+                $scope.$apply();
+
+                $('.hasTooltip').each(function () {
+                    $(this).qtip({
+                        content: {
+                            text: $(this).next('div')
+                        },
+                        hide: {
+                            event: 'unfocus'
+                        },
+                        position: {
+                            at: 'bottom left',
+                            target: $(this)
+                        },
+                        style: {
+                            def: false,
+                            classes: 'tip qtip-rounded qtip-bootstrap'
+                        }
+                    });
+                });
                 return;
             }
             var saleRevenues = Dealer.getHRAllocation({dealerID: DealerService.getDealerId(), validDate: DealerService.getValidDate(), departmentID: depts[deIndex]},
@@ -282,19 +344,6 @@ angular.module('renyuan.controller', [])
                     $.each(saleRevenues.detail, function (index, saleRevenue) {
                         var oneSale = allocationSet[saleRevenue.departmentID][saleRevenue.itemID];
                         oneSale.allocation = saleRevenue.allocation;
-
-                        $.each($scope.itemSummary, function(itemIndex, oneSummary){
-                              if (saleRevenue && saleRevenue.itemID === oneSummary.id)
-                              {
-                                  oneSummary.value =  oneSummary.value + saleRevenue.allocation;
-                              }
-                        });
-                        $.each($scope.deptSummary, function(deptIndex, oneSummary){
-                              if (saleRevenue && saleRevenue.departmentID === oneSummary.value)
-                              {
-                                  oneSummary.sum = oneSummary.sum + oneSummary.allocation;
-                              }
-                        });
                     });
 
                     $.each(allocationSet, function (index, saleInDept) {

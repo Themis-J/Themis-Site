@@ -15,7 +15,7 @@
     <div style="margin-top:20px">
         <div>
             <div style="margin-top:20px">
-                <label><b>变动费用</b></label>
+                <label  class="hasTooltip"><b>变动费用</b></label>
 
                 <div class="well">
                     <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 1}">
@@ -30,7 +30,8 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -75,7 +76,8 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -120,7 +122,8 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -169,7 +172,8 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -214,7 +218,8 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"

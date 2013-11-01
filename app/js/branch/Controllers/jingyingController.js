@@ -44,6 +44,27 @@ angular.module('jingying.controller', [])
                             $scope.generalSales.push(sale);
                         }
                     });
+
+                    $scope.$apply();
+
+                    $('.hasTooltip').each(function () {
+                        $(this).qtip({
+                            content: {
+                                text: $(this).next('div')
+                            },
+                            hide: {
+                                event: 'unfocus'
+                            },
+                            position: {
+                                at: 'bottom left',
+                                target: $(this)
+                            },
+                            style: {
+                                def: false,
+                                classes: 'tip qtip-rounded qtip-bootstrap'
+                            }
+                        });
+                    });
                 })
         });
 

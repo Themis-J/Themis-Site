@@ -50,6 +50,26 @@ angular.module('lirun.controller', [])
                         }
                     });
 
+                    $scope.$apply();
+
+                    $('.hasTooltip').each(function () {
+                        $(this).qtip({
+                            content: {
+                                text: $(this).next('div')
+                            },
+                            hide: {
+                                event: 'unfocus'
+                            },
+                            position: {
+                                at: 'bottom left',
+                                target: $(this)
+                            },
+                            style: {
+                                def: false,
+                                classes: 'tip qtip-rounded qtip-bootstrap'
+                            }
+                        });
+                    });
                 }
             );
         });
@@ -81,6 +101,27 @@ angular.module('lirun.controller', [])
                             $scope.sales.push(sale);
                         }
                     });
+
+                    $scope.$apply();
+
+                    $('.hasTooltip').each(function () {
+                        $(this).qtip({
+                            content: {
+                                text: $(this).next('div')
+                            },
+                            hide: {
+                                event: 'unfocus'
+                            },
+                            position: {
+                                at: 'bottom left',
+                                target: $(this)
+                            },
+                            style: {
+                                def: false,
+                                classes: 'tip qtip-rounded qtip-bootstrap'
+                            }
+                        });
+                    });
                 })
         });
 
@@ -109,6 +150,27 @@ angular.module('lirun.controller', [])
                         if (sale && sale.id) {
                             $scope.generalSales.push(sale);
                         }
+                    });
+
+                    $scope.$apply();
+
+                    $('.hasTooltip').each(function () {
+                        $(this).qtip({
+                            content: {
+                                text: $(this).next('div')
+                            },
+                            hide: {
+                                event: 'unfocus'
+                            },
+                            position: {
+                                at: 'bottom left',
+                                target: $(this)
+                            },
+                            style: {
+                                def: false,
+                                classes: 'tip qtip-rounded qtip-bootstrap'
+                            }
+                        });
                     });
                 })
         });
