@@ -3,7 +3,7 @@
 /* Services */
 
 // In this case it is a simple value service.
-angular.module('branchApp.services', ['ngResource', 'ngCookies'])
+angular.module('branch.services', ['ngResource', 'ngCookies'])
     .factory('Dealer', ['$resource', 'config', function ($resource, config) {
         return $resource(config.service.url + '/dealer/:path/:subpath/:item', {}, {
             getStatus: {method: 'GET', params: {path: 'menu', subpath: 'entrystatus'}, isArray: false},
@@ -33,12 +33,20 @@ angular.module('branchApp.services', ['ngResource', 'ngCookies'])
             saveEmployeeFeeSunmmary: {method: 'POST', params: {path: 'employee', subpath: 'feeSummary'}, isArray: false},
             getHR: {method: 'GET', params: {path: 'hr', subpath: 'allocation', item: 'items'}, isArray: false},
             getHRAllocation: {method: 'GET', params: {path: 'hr', subpath: 'allocation'}, isArray: false},
-            saveHRAllcation: {method: 'POST', params: {path: 'hr', subpath: 'allocation'}, isArray: false}
+            saveHRAllcation: {method: 'POST', params: {path: 'hr', subpath: 'allocation'}, isArray: false},
+            list: {method: 'GET', params: {path: 'list'}, isArray: false}
         });
     }
     ])
+    .factory('User', ['$resource', 'config', function ($resource, config) {
+        return $resource(config.service.url + '/user/:path', {}, {
+            addUser: {method: 'POST', params: {path: 'add'}, isArray: false},
+            resetPass: {method: 'POST', params: {path: 'resetpwd'}, isArray: false}
+        });
+    }])
     .factory('DealerService', ['$cookieStore', function ($cookieStore) {
         var dealerId = null;
+        var dealerFullName = null;
         var defaultDealerId = 11;
         var selectedYear = null;
         var defaultYear = new Date().getFullYear();
@@ -65,6 +73,19 @@ angular.module('branchApp.services', ['ngResource', 'ngCookies'])
                     }
                     else {
                         return defaultDealerId;
+                    }
+                }
+            },
+            getDealerFullName: function () {
+                if (dealerFullName) {
+                    return dealerFullName;
+                }
+                else {
+                    if ($cookieStore.get('dealerFullName')) {
+                        return $cookieStore.get('dealerFullName');
+                    }
+                    else {
+                        return "";
                     }
                 }
             },
@@ -182,6 +203,12 @@ angular.module('branchApp.services', ['ngResource', 'ngCookies'])
             setDealerId: function (dealer) {
                 dealerId = dealer;
                 $cookieStore.put('dealerId', dealer.toString());
+            },
+
+            setDealerFullName: function(fullName)
+            {
+                dealerFullName = fullName;
+                $cookieStore.put('dealerFullName', fullName.toString());
             },
 
             setSelectedYear: function (year) {

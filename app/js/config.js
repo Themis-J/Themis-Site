@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('branch.config', []).constant(
+angular.module('themis.config', []).constant(
     'config',
     {
         service: {

@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('branchApp.controllers', []).
+angular.module('branch.controllers', []).
     controller('editCtrl', ['$scope', '$route', '$location', 'DealerService', 'Dealer', function ($scope, $route, $location, DealerService, Dealer) {
-        $scope.items = ['lirun', 'jingying', 'sunyi', 'zhangkuan', 'kucun', 'renyuan', 'shui', 'welcome'];
-        $scope.itemNames = ['收入与毛利润', '经营费用', '非经营性损益', '应收账款', '库存', '人员管理', '所得税', "欢迎使用"];
+        $scope.items = ['lirun', 'jingying', 'sunyi', 'zhangkuan', 'kucun', 'renyuan', 'shui', 'fenhong', 'welcome'];
+        $scope.itemNames = ['收入与毛利润', '经营费用', '非经营性损益', '应收账款', '库存', '人员管理', '所得税',"员工分红", "欢迎使用"];
         $scope.doneMenus = [];
 
         var datepicker = $("#datepicker").datepicker({
@@ -110,4 +110,16 @@ angular.module('branchApp.controllers', []).
 
         $scope.$on('$includeContentLoaded', function () {
         });
-    }]);
+    }])
+    .controller('branchHeadCtrl', [ '$scope', '$route', '$location', 'DealerService','UserService','Auth', function($scope, $route,$location,DealerService,UserService,Auth)
+    {
+         $scope.dealerFullName = DealerService.getDealerFullName();
+
+         $scope.signout = function() {
+             Auth.logout({}, function () {
+                 UserService.setupUser(null);
+                 $location.path('/guest/login');
+             })
+         }
+    }
+    ]);

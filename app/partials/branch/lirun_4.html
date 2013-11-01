@@ -53,7 +53,8 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            {{sale.name}}
+                                            <label class="hasTooltip">{{sale.name}}</label>
+                                            <div style="display: none;" bind-html-unsafe="sale.tooltip" ></div>
                                         </td>
                                         <td width="15%">
                                             <input ng-if="sale.journalType == 'Revenue'" type="text"
@@ -149,7 +150,8 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            {{sale.name}}
+                                            <label class="hasTooltip">{{sale.name}}</label>
+                                            <div style="display: none;" bind-html-unsafe="sale.tooltip" ></div>
                                         </td>
                                         <td width="15%">
                                             <input ng-if="sale.journalType == 'Revenue'" type="text"

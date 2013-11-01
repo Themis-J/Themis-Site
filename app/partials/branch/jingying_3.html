@@ -19,7 +19,7 @@
 
                 <div class="well">
                     <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 1}">
-                        <div class="text-warning"   style="padding-left: 60%"
+                        <div class="text-warning" style="padding-left: 60%"
                              ng-show="form.amount.$dirty && form.amount.$invalid">
                             <small class="text-warning"
                                    ng-show="form.amount.$error.pattern">
@@ -30,7 +30,9 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip"></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -64,7 +66,7 @@
 
                 <div class="well">
                     <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 3}">
-                        <div class="text-warning"       style="padding-left: 60%"
+                        <div class="text-warning" style="padding-left: 60%"
                              ng-show="form.amount.$dirty && form.amount.$invalid">
                             <small class="text-warning"
                                    ng-show="form.amount.$error.pattern">
@@ -75,7 +77,9 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip"></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -91,10 +95,10 @@
 
                     <table style="font-size: 12px; width: 100%">
                         <tr>
-                            <td  width="25%" >
+                            <td width="25%">
                                 合计
                             </td>
-                            <td  width="35%" style="text-align: center">
+                            <td width="35%" style="text-align: center">
                                 {{generalSummary[3]}}
                             </td>
                         </tr>
@@ -109,7 +113,7 @@
 
                 <div class="well">
                     <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 5}">
-                        <div class="text-warning"  style="padding-left: 60%"
+                        <div class="text-warning" style="padding-left: 60%"
                              ng-show="form.amount.$dirty && form.amount.$invalid">
                             <small class="text-warning"
                                    ng-show="form.amount.$error.pattern">
@@ -120,7 +124,9 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip"></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -136,10 +142,10 @@
 
                     <table style="font-size: 12px; width: 100%">
                         <tr>
-                            <td  width="25%" >
+                            <td width="25%">
                                 合计
                             </td>
-                            <td  width="35%" style="text-align: center">
+                            <td width="35%" style="text-align: center">
                                 {{generalSummary[5]}}
                             </td>
                         </tr>
@@ -158,7 +164,7 @@
 
                 <div class="well">
                     <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 2}">
-                        <div class="text-warning"   style="padding-left: 60%"
+                        <div class="text-warning" style="padding-left: 60%"
                              ng-show="form.amount.$dirty && form.amount.$invalid">
                             <small class="text-warning"
                                    ng-show="form.amount.$error.pattern">
@@ -169,7 +175,9 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip"></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -185,10 +193,10 @@
 
                     <table style="font-size: 12px; width: 100%">
                         <tr>
-                            <td  width="25%">
+                            <td width="25%">
                                 合计
                             </td>
-                            <td  width="35%" style="text-align: center">
+                            <td width="35%" style="text-align: center">
                                 {{generalSummary[2]}}
                             </td>
                         </tr>
@@ -203,7 +211,7 @@
 
                 <div class="well">
                     <form name="form" ng-repeat="generalSale in generalSales | filter: {categoryID: 4}">
-                        <div class="text-warning"     style="padding-left: 60%"
+                        <div class="text-warning" style="padding-left: 60%"
                              ng-show="form.amount.$dirty && form.amount.$invalid">
                             <small class="text-warning"
                                    ng-show="form.amount.$error.pattern">
@@ -214,7 +222,9 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip"></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -230,10 +240,10 @@
 
                     <table style="font-size: 12px; width: 100%">
                         <tr>
-                            <td width="25%" >
+                            <td width="25%">
                                 合计
                             </td>
-                            <td  width="35%" style="text-align: center">
+                            <td width="35%" style="text-align: center">
                                 {{generalSummary[4]}}
                             </td>
                         </tr>

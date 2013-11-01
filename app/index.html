@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="branchApp">
+<html lang="en" ng-app="themis">
 <head>
     <meta charset="utf-8">
     <title>广汽集团报表系统</title>
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/jquery/qtip/css/jquery.qtip.min.css">
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body style="font-family: '" Helvetica Neue
@@ -16,6 +17,7 @@
 
 <script src="lib/jquery/jquery-2.0.2.min.js"></script>
 <script src="lib/jquery-ui/js/jquery-ui.js"></script>
+<script src="lib/jquery/qtip/js/jquery.qtip.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 
 <script src="lib/angular/angular.js"></script>
@@ -23,21 +25,26 @@
 <script src="lib/angular/angular-resource.js"></script>
 <script src="lib/angular/angular-cookies.js"></script>
 <script src="lib/angular/angular-animate.js"></script>
+<script src="lib/angular-sanitize/angular-sanitize.js"></script>
 
-<script src="js/branch/app.js"></script>
-<script src="js/branch/config.js"></script>
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
+<script src="js/guest/controllers.js"></script>
 <script src="js/branch/services.js"></script>
 <script src="js/branch/controllers.js"></script>
-<script src="js/branch/filters.js"></script>
-<script src="js/branch/directives.js"></script>
-
 <script src="js/branch/Controllers/lirunControllers.js"></script>
 <script src="js/branch/Controllers/jingyingController.js"></script>
-<script src="js/branch/Controllers/kucun.js"></script>
+<script src="js/branch/Controllers/fenhongController.js"></script>
+<script src="js/branch/Controllers/kucunController.js"></script>
 <script src="js/branch/Controllers/zhangkuanController.js"></script>
 <script src="js/branch/Controllers/sunyiController.js"></script>
 <script src="js/branch/Controllers/renyuanController.js"></script>
 <script src="js/branch/Controllers/taxController.js"></script>
+<script src="js/admin/controllers.js"></script>
+<script src="js/admin/services.js"></script>
 
 </body>
 </html>

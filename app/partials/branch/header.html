@@ -1,21 +1,12 @@
-<div class="navbar navbar-inverse navbar-fixed-top" style="font-size: 13px">
+<div class="navbar navbar-inverse navbar-fixed-top" style="font-size: 13px" ng-controller="branchHeadCtrl">
     <div class="navbar-inner">
         <div class="container">
             <div class="fluid-container navbar-sub">
                 <a class="brand" href="#" style="font-size: 23px;color:white">广汽集团</a>
             </div>
-            <div class="fluid-container navbar-sub" style="font-size: 16px">
-                <ul class="nav">
-                    <li class="active">
-                        <a href="#">数据上传</a>
-                    </li>
-                    <li>
-                        <a href="#">帮助</a>
-                    </li>
-                </ul>
-            </div>
             <div class="pull-right" style="font-size: 18px;padding-top: 10px">
-                <span style="color:gray"><b>广州长宁汽车销售服务有限公司</b></span>
+                <span style="color:gray"><b>{{dealerFullName}}</b></span>
+                <a href="#" title="退出登录" ng-click="signout()" onclick="return false;" style="text-decoration: none"><i class="icon-signout" style="color: white"></i></a>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<div ng-controller="jingyingCtrl">
+<div ng-controller="fenhongCtrl">
 <div style="height: 30px">
     <span ng-class="autoSaveClass">{{autoSaveTime}}</span>
 
@@ -30,7 +30,8 @@
                         <table style="font-size: 12px">
                             <tr>
                                 <td width="35%">
-                                    {{generalSale.name}}
+                                    <label class="hasTooltip">{{generalSale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                                 </td>
                                 <td width="25%">
                                     <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -50,7 +51,7 @@
                                 合计
                             </td>
                             <td width="35%" style="text-align: center">
-                                {{generalSummary[1]}}
+                                {{generalSummary[9]}}
                             </td>
                         </tr>
                     </table>

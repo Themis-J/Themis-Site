@@ -68,3 +68,22 @@ form{
 .ui-datepicker-calendar {
     display: none;
 }
+
+.ui-tooltip, .qtip{
+    max-width: 500px; /* Change this? */
+    min-width: 50px; /* ...and this! */
+}
+
+.qtip-content div div div{
+    width: 470px;
+}
+
+.qtip-content div div div table {
+    width: 460px;
+    table-layout:fixed
+}
+.qtip-content .hidden {
+    display:block;
+    visibility: visible;
+}
+

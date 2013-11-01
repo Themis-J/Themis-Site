@@ -16,7 +16,8 @@
             <div style="margin-top:20px">
                 <div ng-repeat="accountReceivable in accountReceivables | filter: {id:4}">
                     <div>
-                        <label><b>{{accountReceivable.name}}</b></label>
+                        <label class="hasTooltip"><b>{{accountReceivable.name}}</b></label>
+                        <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
                         <div class="well">
                             <table style="font-size: 12px">
@@ -54,7 +55,8 @@
             <div style="margin-top:20px">
                 <div ng-repeat="accountReceivable in accountReceivables | filter:{id:12}">
                     <div>
-                        <label><b>{{accountReceivable.name}} </b></label>
+                        <label class="hasTooltip"><b>{{accountReceivable.name}}</b></label>
+                        <div style="display: none;" bind-html-unsafe="accountReceivable.tooltip" ></div>
 
                         <div class="well">
                             <table style="font-size: 12px">

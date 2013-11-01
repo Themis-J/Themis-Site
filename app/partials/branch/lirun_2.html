@@ -28,7 +28,8 @@
                     <table style="font-size: 12px">
                         <tr>
                             <td width="35%">
-                                {{generalSale.name}}
+                                <label class="hasTooltip">{{generalSale.name}}</label>
+                                <div style="display: none;" bind-html-unsafe="generalSale.tooltip" ></div>
                             </td>
                             <td width="25%">
                                 <input type="text" ng-pattern="/^\d+(\.\d+)?$/" class="input-mini" name="amount"
@@ -99,7 +100,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    {{sale.name}}
+                                    <label class="hasTooltip">{{sale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="sale.tooltip" ></div>
                                 </td>
                                 <td width="15%">
                                     <input ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^[0-9]*$/"
@@ -189,7 +191,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    {{sale.name}}
+                                    <label class="hasTooltip">{{sale.name}}</label>
+                                    <div style="display: none;" bind-html-unsafe="sale.tooltip" ></div>
                                 </td>
                                 <td width="15%">
                                     <input ng-if="sale.journalType == 'Revenue'" type="text" ng-pattern="/^[0-9]*$/"
