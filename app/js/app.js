@@ -2,12 +2,15 @@
 
 angular.module('themis', ['ngRoute', 'themis.directives', 'themis.controllers', 'themis.services', 'themis.config', 'guest.controllers', 'ngSanitize',
         'branch.services', 'branch.controllers', 'lirun.controller', 'jingying.controller','fenhong.controller', 'sunyi.controller', 'kucun.controller', 'zhangkuan.controller', 'renyuan.controller', 'tax.controller',
+        'masterApp.config', 'masterApp.services','masterApp.controllers', 'overallAbs.controllers', 'overallPercentage.controllers', 'departmentOp.controllers', 'departmentAbs.controllers', 'departmentOpComp.controllers','departmentPercentage.controllers', 'salesAbs.controllers',
         'admin.controllers']).
     config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
         $routeProvider.when('/branch', {templateUrl: 'partials/branch/edit.html', controller: 'editCtrl'})
             .when('/branch/edit', {templateUrl: 'partials/branch/edit.html', controller: 'editCtrl'})
             .when('/branch/help', {templateUrl: 'partials/branch/help.html', controller: 'helpCtrl'})
             .when('/guest/login', {templateUrl: 'partials/guest/login.html', controller: 'loginCtrl'})
+            .when('/head', {templateUrl: 'partials/head/edit.html', controller: 'headEditCtrl'})
+            .when('/head/report', {templateUrl: 'partials/head/edit.html', controller: 'headEditCtrl'})
             .when('/admin', {templateUrl: 'partials/admin/admin.html', controller: 'adminCtrl'})
             .when('/admin/addUser', {templateUrl: 'partials/admin/admin.html', controller: 'adminCtrl'})
             .when('/admin/changePass', {templateUrl: 'partials/admin/changePass.html', controller: 'adminCtrl'})

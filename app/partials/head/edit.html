@@ -1,0 +1,14 @@
+<div id="header">
+    <ng-include src="'partials/head/header.html'"></ng-include>
+</div>
+
+<div id='container_div' class="container" style="padding-top:95px">
+    <div class="row-fluid">
+    <div id="nav_div" class="span3">
+        <ng-include src="'partials/head/nav.html'" onload="bindEvent()"></ng-include>
+    </div>
+
+    <ng-include src="subpage"></ng-include>
+    </div>
+</div>
+</div>

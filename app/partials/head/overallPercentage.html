@@ -1,0 +1,45 @@
+<div id="report_div" class="span9 row-fluid" style="padding-left: 60px" ng-controller="overallPercentageCtrl">
+        <div class="span11">
+            <div>
+            	<div id="date_div" style="padding-bottom: 10px">
+		            <div>
+		                <select data-width="100px" ng-options="o.name for o in yearOptions" ng-model="selectedYearOption" ng-change="selectReportYear()"></select>
+		            	<select data-width="100px" ng-options="o.name for o in monthOptions" ng-model="selectedMonthOption" ng-change="selectReportMonth()"></select>
+		            </div>
+	            </div>
+				<div style="padding-bottom: 10px">
+	            	<span ng-repeat="time in times">
+            			 <input name="timeSelectionBox" type="radio" ng-checked="time.isDefault" ng-value="time.value" ng-click="selectTime(time.value)">{{time.text}}
+            		</span>
+				</div>
+				<div style="padding-bottom: 10px">
+					<span ng-repeat="chart in charts">
+						<input type="checkbox" ng-model="chart.display" ng-click="showReport()"><span>{{chart.text}}</span>
+					</span>
+				</div>
+                <div>
+		            <select data-width="100px" ng-options="o.name for o in denominatorOptions" ng-model="selectedDenominatorOption" ng-change="selectReportDenominotor()"></select>
+	            </div>
+           
+                <div style="padding-bottom: 10px">
+		       	<button class="btn btn-success" type="button" ng-click="toggleFullScreen()">全屏</button>
+		       </div>
+           
+            </div>
+
+			<div id="chartsDisplay">
+				<div id="report_opProfit" ng-show="charts[0].display">
+	            </div>
+	            
+	            <div id="report_netProfit" ng-show="charts[1].display">
+	            </div>
+	            
+	            <div id="report_expense" ng-show="charts[3].display">
+	            </div>
+	            
+	            <div id="report_margin" ng-show="charts[4].display">
+	            </div>
+	            
+			</div>
+        </div>
+</div>

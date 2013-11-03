@@ -1,0 +1,1258 @@
+
+{
+    "reportName": "OverallIncomeReport",
+    "detail": [
+        {
+            "year": 2012,
+            "month": null,
+            "detail": [
+                {
+                    "id": 1,
+                    "name": "重庆长锦",
+                    "code": "CN-01",
+                    "revenue": {
+                        "amount": 8107.545770271485,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 12090.374690967037,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 12090.374690967037,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 2,
+                    "name": "长沙长耀",
+                    "code": "CN-02",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 2197.5685277777025,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": -2197.5685277777025,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 3,
+                    "name": "广本一店",
+                    "code": "CN-03",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 4,
+                    "name": "长盛公司",
+                    "code": "CN-05",
+                    "revenue": {
+                        "amount": 18607.345921494867,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 1284.7007269592514,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 9595.588505399342,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 8310.88777844009,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 5,
+                    "name": "北京长怡",
+                    "code": "CN-06",
+                    "revenue": {
+                        "amount": 33828.788462313336,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 2577.981364088353,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 5001.862852441584,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 2423.8814883532314,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 6,
+                    "name": "南京长昊",
+                    "code": "CN-07",
+                    "revenue": {
+                        "amount": 60366.06557888456,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 23222.62781492828,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 23222.62781492828,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 7,
+                    "name": "重庆长捷",
+                    "code": "CN-08",
+                    "revenue": {
+                        "amount": 22376.350793813453,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 5371.940501194253,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 5371.940501194253,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 8,
+                    "name": "长力公司",
+                    "code": "CN-09",
+                    "revenue": {
+                        "amount": 26948.867626149044,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 5570.027850746986,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 5570.027850746986,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 9,
+                    "name": "重庆长达",
+                    "code": "CN-10",
+                    "revenue": {
+                        "amount": 45292.73533613229,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 7325.320883098771,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 7325.320883098771,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 10,
+                    "name": "广丰一店",
+                    "code": "CN-11",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 7176.476165260448,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": -7176.476165260448,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 11,
+                    "name": "长宁公司",
+                    "code": "CN-12",
+                    "revenue": {
+                        "amount": 24292.539747658902,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 6936.15081756112,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 6936.15081756112,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 12,
+                    "name": "长凯公司",
+                    "code": "CN-13",
+                    "revenue": {
+                        "amount": 35035.06471293833,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 18179.10858465034,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 18179.10858465034,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 13,
+                    "name": "北京长京行",
+                    "code": "CN-14",
+                    "revenue": {
+                        "amount": 8729.750068913585,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 7907.578768213298,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 7907.578768213298,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 14,
+                    "name": "南京长益",
+                    "code": "CN-15",
+                    "revenue": {
+                        "amount": 34420.15313085267,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 5449.637546812994,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 22034.242711216044,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 16584.605164403052,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 15,
+                    "name": "重庆长俊",
+                    "code": "CN-16",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 29044.89495309922,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": -29044.89495309922,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 17,
+                    "name": "长悦公司",
+                    "code": "CN-18",
+                    "revenue": {
+                        "amount": 24750.23779932708,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 10785.817741864337,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 15867.17232262404,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 5081.354580759702,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 16,
+                    "name": "长沙长威",
+                    "code": "CN-17",
+                    "revenue": {
+                        "amount": 30525.136728968544,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 10376.150259374073,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 28891.55217066442,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 18515.401911290348,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 19,
+                    "name": "长佳公司",
+                    "code": "CN-20",
+                    "revenue": {
+                        "amount": 18746.172857069363,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 13907.421381260774,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 13907.421381260774,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 18,
+                    "name": "湖南长坤",
+                    "code": "CN-19",
+                    "revenue": {
+                        "amount": 32058.762899781243,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 10286.363483881463,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 10286.363483881463,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 20,
+                    "name": "重庆长冠",
+                    "code": "CN-21",
+                    "revenue": {
+                        "amount": 26665.91070628887,
+                        "percentage": 0,
+                        "reference": 34015.6441281622
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5692.618904591022
+                    },
+                    "margin": {
+                        "amount": 9931.567740723862,
+                        "percentage": 0,
+                        "reference": 16512.472998504
+                    },
+                    "opProfit": {
+                        "amount": 9931.567740723862,
+                        "percentage": 0,
+                        "reference": 14213.548993882412
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                }
+            ]
+        },
+        {
+            "year": 2013,
+            "month": null,
+            "detail": [
+                {
+                    "id": 1,
+                    "name": "重庆长锦",
+                    "code": "CN-01",
+                    "revenue": {
+                        "amount": 59408.85561517957,
+                        "percentage": 6.327600398263337,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 32714.72432058175,
+                        "percentage": 1.7058486735753178,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 32714.72432058175,
+                        "percentage": 1.7058486735753178,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 2,
+                    "name": "长沙长耀",
+                    "code": "CN-02",
+                    "revenue": {
+                        "amount": 28430.573684061274,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 17960.50661090264,
+                        "percentage": 7.172899449495327,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 7404.96271785793,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -10555.54389304471,
+                        "percentage": 3.803283155733503,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 3,
+                    "name": "广本一店",
+                    "code": "CN-03",
+                    "revenue": {
+                        "amount": 12008.699005605533,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 16314.878707693028,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 3462.7280547117334,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -12852.150652981294,
+                        "percentage": 0,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 4,
+                    "name": "长盛公司",
+                    "code": "CN-05",
+                    "revenue": {
+                        "amount": 14692.392849938617,
+                        "percentage": -0.21039825282302985,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 20923.076820298018,
+                        "percentage": 15.286343100171425,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 9701.601666941275,
+                        "percentage": 0.011048114608320243,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -11221.475153356743,
+                        "percentage": -2.35021377408888,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 5,
+                    "name": "北京长怡",
+                    "code": "CN-06",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 31953.65901109149,
+                        "percentage": 11.394837083080004,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -31953.65901109149,
+                        "percentage": -14.182847084161937,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 6,
+                    "name": "南京长昊",
+                    "code": "CN-07",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 3978.5404747800635,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -3978.5404747800635,
+                        "percentage": -1.1713217171840702,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 7,
+                    "name": "重庆长捷",
+                    "code": "CN-08",
+                    "revenue": {
+                        "amount": 25400.219549254824,
+                        "percentage": 0.1351368140097893,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 20407.99981146968,
+                        "percentage": 2.7989995992942798,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 20407.99981146968,
+                        "percentage": 2.7989995992942798,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 8,
+                    "name": "长力公司",
+                    "code": "CN-09",
+                    "revenue": {
+                        "amount": 31612.220931787295,
+                        "percentage": 0.1730444993211256,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 7422.7328552027,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 23409.62456333414,
+                        "percentage": 3.2027841135829727,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 15986.89170813144,
+                        "percentage": 1.870163693344454,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 9,
+                    "name": "重庆长达",
+                    "code": "CN-10",
+                    "revenue": {
+                        "amount": 15675.28282571612,
+                        "percentage": -0.6539117651123367,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 4522.560551442164,
+                        "percentage": -0.3826126358673558,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 4522.560551442164,
+                        "percentage": -0.3826126358673558,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 10,
+                    "name": "广丰一店",
+                    "code": "CN-11",
+                    "revenue": {
+                        "amount": 14193.221052285813,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 1491.127382491364,
+                        "percentage": -0.7922201163699889,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 5884.581721268225,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 4393.454338776861,
+                        "percentage": -1.6122021780054798,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 11,
+                    "name": "长宁公司",
+                    "code": "CN-12",
+                    "revenue": {
+                        "amount": 16107.759043030559,
+                        "percentage": -0.3369256895182036,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 1721.0263453429475,
+                        "percentage": -0.7518758760282995,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 1721.0263453429475,
+                        "percentage": -0.7518758760282995,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 12,
+                    "name": "长凯公司",
+                    "code": "CN-13",
+                    "revenue": {
+                        "amount": 16861.451362555767,
+                        "percentage": -0.5187264102204187,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 57.31437785789883,
+                        "percentage": -0.9968472393686952,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 57.31437785789883,
+                        "percentage": -0.9968472393686952,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 13,
+                    "name": "北京长京行",
+                    "code": "CN-14",
+                    "revenue": {
+                        "amount": 29691.888727674617,
+                        "percentage": 2.4012301031855046,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 9375.826216285179,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 7725.524571023191,
+                        "percentage": -0.02302274849564874,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -1650.3016452619877,
+                        "percentage": -1.2086987298685956,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 14,
+                    "name": "南京长益",
+                    "code": "CN-15",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 11179.189662516448,
+                        "percentage": 1.051363887320205,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -11179.189662516448,
+                        "percentage": -1.6740702930034954,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 15,
+                    "name": "重庆长俊",
+                    "code": "CN-16",
+                    "revenue": {
+                        "amount": 28918.58218382303,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 16741.653558663616,
+                        "percentage": -0.42359393670737977,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 18577.479385627747,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 1835.82582696413,
+                        "percentage": -1.0632064887798205,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 17,
+                    "name": "长悦公司",
+                    "code": "CN-18",
+                    "revenue": {
+                        "amount": 25219.168497570856,
+                        "percentage": 0.0189465128394252,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 20298.85678431526,
+                        "percentage": 0.8819951597667722,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 17463.201019739514,
+                        "percentage": 0.10058683832656144,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -2835.6557645757457,
+                        "percentage": -1.558051149453891,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 16,
+                    "name": "长沙长威",
+                    "code": "CN-17",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 14998.422252146413,
+                        "percentage": 0.44547080345106443,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -14998.422252146413,
+                        "percentage": -1.8100511306211857,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 19,
+                    "name": "长佳公司",
+                    "code": "CN-20",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 11474.435564501486,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": -11474.435564501486,
+                        "percentage": -1.8250584526016045,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 18,
+                    "name": "湖南长坤",
+                    "code": "CN-19",
+                    "revenue": {
+                        "amount": 45112.87301417045,
+                        "percentage": 0.407193195670014,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 12305.235714387825,
+                        "percentage": 0.19626685695774765,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 12305.235714387825,
+                        "percentage": 0.19626685695774765,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                },
+                {
+                    "id": 20,
+                    "name": "重庆长冠",
+                    "code": "CN-21",
+                    "revenue": {
+                        "amount": 26667.253791091898,
+                        "percentage": 0.00005036710794627351,
+                        "reference": 30833.373125980484
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 16958.83289978864
+                    },
+                    "margin": {
+                        "amount": 12060.68015851258,
+                        "percentage": 0.2143782807882794,
+                        "reference": 16275.117474287536
+                    },
+                    "opProfit": {
+                        "amount": 12060.68015851258,
+                        "percentage": 0.2143782807882794,
+                        "reference": 10216.09258709781
+                    },
+                    "netProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "detail": []
+                }
+            ]
+        }
+    ]
+}
