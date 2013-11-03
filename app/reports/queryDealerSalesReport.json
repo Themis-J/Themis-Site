@@ -1,0 +1,1021 @@
+{
+    "reportName": "SalesReport",
+    "detail": [
+        {
+            "year": 2012,
+            "month": null,
+            "detail": [],
+            "departmentDetail": [],
+            "salesDetail": [
+                {
+                    "id": 1,
+                    "name": "重庆长锦",
+                    "code": "CN-01",
+                    "retail": {
+                        "amount": 2365,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4237,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "长沙长耀",
+                    "code": "CN-02",
+                    "retail": {
+                        "amount": 1883,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5221,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "广本一店",
+                    "code": "CN-03",
+                    "retail": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "长盛公司",
+                    "code": "CN-05",
+                    "retail": {
+                        "amount": 3685,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 6296,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "北京长怡",
+                    "code": "CN-06",
+                    "retail": {
+                        "amount": 6362,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 6362,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "南京长昊",
+                    "code": "CN-07",
+                    "retail": {
+                        "amount": 2540,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 2839,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "重庆长捷",
+                    "code": "CN-08",
+                    "retail": {
+                        "amount": 2487,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4561,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "长力公司",
+                    "code": "CN-09",
+                    "retail": {
+                        "amount": 4801,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 6467,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "重庆长达",
+                    "code": "CN-10",
+                    "retail": {
+                        "amount": 6551,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 9686,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "广丰一店",
+                    "code": "CN-11",
+                    "retail": {
+                        "amount": 5032,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5810,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 11,
+                    "name": "长宁公司",
+                    "code": "CN-12",
+                    "retail": {
+                        "amount": 2743,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 2743,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 12,
+                    "name": "长凯公司",
+                    "code": "CN-13",
+                    "retail": {
+                        "amount": 5304,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 6179,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 13,
+                    "name": "北京长京行",
+                    "code": "CN-14",
+                    "retail": {
+                        "amount": 1585,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 1585,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 14,
+                    "name": "南京长益",
+                    "code": "CN-15",
+                    "retail": {
+                        "amount": 2803,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 3134,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 15,
+                    "name": "重庆长俊",
+                    "code": "CN-16",
+                    "retail": {
+                        "amount": 4898,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5709,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 17,
+                    "name": "长悦公司",
+                    "code": "CN-18",
+                    "retail": {
+                        "amount": 4967,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4967,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 16,
+                    "name": "长沙长威",
+                    "code": "CN-17",
+                    "retail": {
+                        "amount": 1883,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 2805,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 19,
+                    "name": "长佳公司",
+                    "code": "CN-20",
+                    "retail": {
+                        "amount": 4677,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5574,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 18,
+                    "name": "湖南长坤",
+                    "code": "CN-19",
+                    "retail": {
+                        "amount": 1355,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 3139,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                },
+                {
+                    "id": 20,
+                    "name": "重庆长冠",
+                    "code": "CN-21",
+                    "retail": {
+                        "amount": 2070,
+                        "percentage": 0,
+                        "reference": 4725.444444444444
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 3151,
+                        "percentage": 0,
+                        "reference": 5842.777777777777
+                    }
+                }
+            ]
+        },
+        {
+            "year": 2013,
+            "month": null,
+            "detail": [],
+            "departmentDetail": [],
+            "salesDetail": [
+                {
+                    "id": 1,
+                    "name": "重庆长锦",
+                    "code": "CN-01",
+                    "retail": {
+                        "amount": 6906,
+                        "percentage": 1.9200845665961945,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 7632,
+                        "percentage": 0.8012744866650933,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "长沙长耀",
+                    "code": "CN-02",
+                    "retail": {
+                        "amount": 3321,
+                        "percentage": 0.7636749867233139,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4569,
+                        "percentage": -0.12488029113196705,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "广本一店",
+                    "code": "CN-03",
+                    "retail": {
+                        "amount": 588,
+                        "percentage": 0,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 2310,
+                        "percentage": 0,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "长盛公司",
+                    "code": "CN-05",
+                    "retail": {
+                        "amount": 4762,
+                        "percentage": 0.29226594301221165,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5762,
+                        "percentage": -0.08481575603557814,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "北京长怡",
+                    "code": "CN-06",
+                    "retail": {
+                        "amount": 3004,
+                        "percentage": -0.5278214397988054,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 3766,
+                        "percentage": -0.40804778371581263,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "南京长昊",
+                    "code": "CN-07",
+                    "retail": {
+                        "amount": 4612,
+                        "percentage": 0.815748031496063,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5912,
+                        "percentage": 1.0824233885170835,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "重庆长捷",
+                    "code": "CN-08",
+                    "retail": {
+                        "amount": 5917,
+                        "percentage": 1.3791716928025735,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 8962,
+                        "percentage": 0.9649199736899803,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "长力公司",
+                    "code": "CN-09",
+                    "retail": {
+                        "amount": 5150,
+                        "percentage": 0.07269318891897521,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 7554,
+                        "percentage": 0.16808411937528994,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "重庆长达",
+                    "code": "CN-10",
+                    "retail": {
+                        "amount": 2359,
+                        "percentage": -0.6399023049916044,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 5158,
+                        "percentage": -0.4674788354325831,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "广丰一店",
+                    "code": "CN-11",
+                    "retail": {
+                        "amount": 3207,
+                        "percentage": -0.36267885532591415,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4923,
+                        "percentage": -0.15266781411359726,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 11,
+                    "name": "长宁公司",
+                    "code": "CN-12",
+                    "retail": {
+                        "amount": 1541,
+                        "percentage": -0.43820634341961356,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 3649,
+                        "percentage": 0.33029529711994166,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 12,
+                    "name": "长凯公司",
+                    "code": "CN-13",
+                    "retail": {
+                        "amount": 2083,
+                        "percentage": -0.6072775263951734,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 2083,
+                        "percentage": -0.6628904353455252,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 13,
+                    "name": "北京长京行",
+                    "code": "CN-14",
+                    "retail": {
+                        "amount": 4014,
+                        "percentage": 1.5324921135646687,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4014,
+                        "percentage": 1.5324921135646687,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 14,
+                    "name": "南京长益",
+                    "code": "CN-15",
+                    "retail": {
+                        "amount": 7109,
+                        "percentage": 1.536211202283268,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 7109,
+                        "percentage": 1.2683471601786853,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 15,
+                    "name": "重庆长俊",
+                    "code": "CN-16",
+                    "retail": {
+                        "amount": 1433,
+                        "percentage": -0.7074316047366271,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4715,
+                        "percentage": -0.17411105272376948,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 17,
+                    "name": "长悦公司",
+                    "code": "CN-18",
+                    "retail": {
+                        "amount": 2669,
+                        "percentage": -0.4626535131870344,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 4024,
+                        "percentage": -0.1898530299979867,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 16,
+                    "name": "长沙长威",
+                    "code": "CN-17",
+                    "retail": {
+                        "amount": 1110,
+                        "percentage": -0.41051513542219864,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 1744,
+                        "percentage": -0.37825311942959,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 19,
+                    "name": "长佳公司",
+                    "code": "CN-20",
+                    "retail": {
+                        "amount": 2057,
+                        "percentage": -0.5601881548000855,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 2057,
+                        "percentage": -0.6309651955507715,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 18,
+                    "name": "湖南长坤",
+                    "code": "CN-19",
+                    "retail": {
+                        "amount": 3177,
+                        "percentage": 1.344649446494465,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 6489,
+                        "percentage": 1.0672188595093979,
+                        "reference": 6509.666666666667
+                    }
+                },
+                {
+                    "id": 20,
+                    "name": "重庆长冠",
+                    "code": "CN-21",
+                    "retail": {
+                        "amount": 6200,
+                        "percentage": 1.9951690821256038,
+                        "reference": 4898.777777777777
+                    },
+                    "wholesale": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "other": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "overall": {
+                        "amount": 8048,
+                        "percentage": 1.5541098064106633,
+                        "reference": 6509.666666666667
+                    }
+                }
+            ]
+        }
+    ]
+}

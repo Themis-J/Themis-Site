@@ -1,0 +1,33 @@
+<div id="report_div" class="span9 row-fluid" style="padding-left: 60px" ng-controller="overallAbsCtrl">
+        <div class="span11">
+            <div>
+            	<div id="date_div" style="padding-bottom: 10px">
+		            <div>
+		                <select ng-options="o.name for o in yearOptions" ng-model="selectedYearOption" ng-change="selectReportYear()"></select>
+		            	<select ng-options="o.name for o in monthOptions" ng-model="selectedMonthOption" ng-change="selectReportMonth()"></select>
+		            </div>
+	            </div>
+				<div style="padding-bottom: 10px">
+	            	<span ng-repeat="time in times">
+            			 <input name="timeSelectionBox" type="radio" ng-checked="time.isDefault" ng-value="time.value" ng-click="selectTime(time.value)">{{time.text}}
+            		</span>
+				</div>
+				<div style="padding-bottom: 10px">
+					<span ng-repeat="chart in charts">
+						<input type="checkbox" ng-model="chart.display" ng-click="showReport()"><span>{{chart.text}}</span>
+					</span>
+				</div>
+						
+		       <div style="padding-bottom: 10px">
+		       	<button class="btn btn-success" type="button" ng-click="toggleFullScreen()">全屏</button>
+		       </div>
+            </div>
+
+			<div id="chartsDisplay" ng-repeat="chart in charts">
+				<div id="{{chart.id}}" ng-show="chart.display">
+	            </div>
+			</div>
+		
+		</div>
+        
+</div>

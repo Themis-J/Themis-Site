@@ -19,7 +19,7 @@ angular.module('guest.controllers', [])
                     $location.path('/admin');
                 }
                 else if (UserService.validateRoleDealer()) {
-                    $location.path('/branch/edit');
+                    $location.path('/branch');
                 }
                 else if (UserService.validateRoleHead()) {
                     $location.path('/head');

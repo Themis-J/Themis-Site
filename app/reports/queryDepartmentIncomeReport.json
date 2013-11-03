@@ -1,0 +1,403 @@
+{
+    "reportName": "DepartmentIncomeReport",
+    "detail": [
+        {
+            "year": 2012,
+            "month": null,
+            "detail": [],
+            "departmentDetail": [
+                {
+                    "id": 0,
+                    "name": "NA",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 1,
+                    "name": "新车销售部",
+                    "revenue": {
+                        "amount": 298.14508343978474,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 11045.499238925055,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 8485.988445524923,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": -2559.5107934001317,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "二手车部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "租恁事业部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "维修部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "备件部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "钣喷部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "其它部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                }
+            ]
+        },
+        {
+            "year": 2013,
+            "month": null,
+            "detail": [],
+            "departmentDetail": [
+                {
+                    "id": 0,
+                    "name": "NA",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 1,
+                    "name": "新车销售部",
+                    "revenue": {
+                        "amount": 28678.082315571726,
+                        "percentage": 95.18834556889057,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 12219.519381827691,
+                        "percentage": 0.43996417863043896,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 12219.519381827691,
+                        "percentage": 5.774162083370202,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "二手车部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 12342,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "租恁事业部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "维修部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "备件部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "钣喷部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "其它部",
+                    "revenue": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "expense": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "margin": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    },
+                    "opProfit": {
+                        "amount": 0,
+                        "percentage": 0,
+                        "reference": 0
+                    }
+                }
+            ]
+        }
+    ]
+}
